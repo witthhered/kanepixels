@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Order</title>
+    <link rel="stylesheet" href="css/isa.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="headerlogo">
+            <img src="assets/asyncbiglogo.png" alt="A-Sync Logo">
+        </div>
+        <nav class="headernav">
+            <a href="#">HOME</a>
+            <a href="#">TECHNOLOGY</a>
+            <a href="complex.html">THE COMPLEX</a>
+            <a href="#">ARCHIVE</a>
+            <a href="#">FOR PERSONNEL</a>
+        </nav>
+        <div class="headeraction">
+            <a href="place_order.html" class="btnbuy">PLACE ORDER</a>
+        </div>
+    </header>
+
+    <section class="main order-hero">
+        <div class="mainlogo">
+            <img src="assets/asyncbiglogo.png" alt="A-Sync Background Logo">
+        </div>
+        <div class="maincontainer">
+            <div class="maintext">
+                <h1>Acquire Your Custom Manufactured Space.</h1>
+                <p>Submit your enterprise specifications to receive an LPMDS space allocation proposal.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="white">
+        <section class="allcontent">
+            <div class="order-wrapper">
+                
+                <div class="order-intro">
+                    <h2>Space Acquisition Form</h2>
+                    <p>Our commercial department will process your request within 24 business hours. All spatial allocations are backed by A-Sync protocol guarantees.</p>
+                </div>
+
+                <form class="order-form" action="#" method="POST">
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">Full Name / Organization *</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="e.g. John Doe / Apex Corp" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Corporate Email Address *</label>
+                            <input type="email" id="email" name="email" placeholder="name@company.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="spaceType">Desired Facility Type *</label>
+                            <select id="spaceType" name="spaceType" required>
+                                <option value="" disabled selected>Select space category</option>
+                                <option value="logistics">Industrial & Logistics Storage</option>
+                                <option value="data">Data Vault & Infrastructure Hub</option>
+                                <option value="office">Modular Corporate HQ / Offices</option>
+                                <option value="custom">Custom Research Installation</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="sqmeters">Required Area (in Sq. Meters)</label>
+                            <input type="number" id="sqmeters" name="sqmeters" placeholder="e.g. 50000" min="1000">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="timeline">Target Deployment Timeline</label>
+                            <select id="timeline" name="timeline">
+                                <option value="immediate">Immediate (Q1)</option>
+                                <option value="6months">Within 6 Months</option>
+                                <option value="1year">Within 1 Year</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="message">Additional Project Requirements</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Specify ceiling heights, power requirements, security clearances, or custom entry portal placement..."></textarea>
+                    </div>
+
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">I agree to A-Sync spatial allocation policies and data privacy terms.</label>
+                    </div>
+
+                    <button type="submit" class="submit-btn">SUBMIT REQUEST</button>
+                </form>
+
+            </div>
+        </section>
+    </section>
+
+    <footer class="footer">
+        <div class="footerleft">
+            <p>Kamash Abilmansur</p>
+            <p>Daniyar Ukin</p>
+            <p>Islam Nurmukhammet</p>
+        </div>
+        <p>&copy; 2017 A-SYNC by Kane Pixels. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

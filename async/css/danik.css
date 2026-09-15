@@ -1,0 +1,778 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "IBM Plex Sans Condensed", sans-serif;
+    /* дефолт шрифт отсюда брать */
+}
+
+body {
+    color: #333;
+    padding-top: 60px; 
+    display: grid;
+    grid-template-rows: 1fr auto;
+    /* для футера грид не трогать */
+}
+.white{
+    width: 100%;
+    background-color: #f3f0e6;
+    border-bottom: 1px solid #111111;
+
+}
+.allcontent{
+    width: 80%;
+    margin: 0 auto;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* header */
+.header {
+    background-color: #d0c24f; 
+    color: #000000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 120px;
+    border-bottom: 1px solid #111111;
+    position: fixed; 
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.headerlogo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 1rem;
+    width: 11vw;
+}
+.headerlogo img{
+    width: 9vh;
+}
+
+.headernav {
+    display: flex;
+    gap: 90px;
+    font-size: 1rem;
+}
+
+.headernav a {
+    /* color: #ffffff; */
+    opacity: 0.8;
+}
+.headernav a:hover {
+    color: #ffffff;
+}
+
+.btnbuy {
+    background-color: transparent; 
+    /* color: #ffffff; */
+    border: 1px solid #000000;
+    padding: 8px 16px;
+    border-radius: 20px; 
+    font-weight: 400;
+    font-size: 1.3rem;
+}
+.btnbuy:hover {
+    background-color: #000000;
+    color: #d0c24f;
+}
+
+.main {
+    background-color: #d0c24f; 
+    color: #f3f0e6;
+    height: calc(100vh - 60px); 
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-bottom: 1px solid #111111;
+}
+
+
+
+
+.mainlogo img{
+    position: absolute;
+    right: -10%;
+    transform: translateY(-50%);
+    width: 65vw; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    letter-spacing: 5px;
+    opacity: 0.5;
+}
+
+.maincontainer {
+    width: 100%;
+    max-width: 90vw;
+    margin: auto 0 15vh 4vw;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.maintext {
+    width: 43vw;
+}
+
+.main h1 {
+    font-family: Georgia, Times, "Times New Roman", serif; 
+    font-size: 4.5rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.main p {
+    font-size: 1.2rem;
+    opacity: 0.8;
+    margin-top: 20px;
+    color: #000000;
+}
+
+.newsgallery {
+    background-color: #f3f0e6; 
+    color: #000000;
+    padding: 80px 40px;
+    /* border-bottom: 1px solid #111111; */
+}
+
+.newsgallery a:hover {
+    text-decoration: underline;
+}
+
+.newsgallery h2,
+.aboutus h2 {
+    margin-bottom: 40px;
+    font-size: 2rem;
+    font-weight: 700;
+    
+}
+
+.newsgrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+.postcard {
+    background: #f8f8f8; 
+    padding: 20px;
+    border-radius: 8px;
+    height: 100%;
+}
+
+.posttitle {
+    font-weight: 700;
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.postdesc {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.5;
+}
+
+.postimg {
+    width: 100%;
+    height: 350px;
+    background-color: #ddd;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    overflow: hidden;
+
+}
+.postimg img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.postimgsmall {
+    width: 100%;
+    height: 120px;
+    background-color: #ddd;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+.postimgsmall img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mediumcol {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.smallcol {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.smallcol .postcard {
+    padding: 15px;
+}
+
+.aboutus {
+    background-color: #f3f0e6;
+    color: #000000;
+    padding: 60px 40px 100px 40px;
+    /* border-top: 1px solid #eee; */
+    border-bottom: 1px solid #111111;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+
+}
+
+.aboutus .text {
+    width: 60%;
+    
+}
+.aboutus .text h2{
+    /* text-align: right; */
+    font-size: 4rem;
+    font-weight: 300;  
+}
+
+
+.aboutus .text p {
+    
+    line-height: 1.7;
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: 300;
+}
+.perehody{
+    width: 100%;
+    height: 100%;
+    padding: 80px 40px;
+}
+.perehody h1{
+    font-size: 3rem;
+}
+.perehody p{
+    font-size: 1.2rem;
+}
+.perehody a{
+    font-size: 1.1rem;
+    text-decoration: underline;
+}
+.tech, .complex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid #111111;
+    padding: 70px 0;
+}
+.tech .container, .complex .container{
+    width: 50%;
+    height: 38vh;
+    overflow: hidden;
+    
+}
+.container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.perehody .text{
+
+    height: 24vh;
+    width: 35%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.archive{
+    padding: 70px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.archive .text{
+    margin: 0 auto;
+}
+
+.footer {
+    background-color: #d0c24f;
+    color: #ffffff;
+    position: sticky;
+    z-index: -5;
+    text-align: center;
+    padding: 30px;
+    font-size: 0.9rem;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.footerleft{
+    text-align: left;
+}
+
+/* personnel    personnell    personnell    personnell    personnell    personnell    personnell    personnell    personnell    personnell    personnell    personnell    personnell */
+.personnelmain{
+    width: 100%;
+    height: 70vh;
+    background-color: #d0c24f;
+    color: #f3f0e6;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid #111111;
+}
+
+.personnellogo img{
+    position: absolute;
+    right: -8%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60vw;
+    opacity: 0.4;
+}
+
+.personneltext{
+    position: absolute;
+    left: 7%;
+    bottom: 12%;
+    width: 45vw;
+    z-index: 2;
+}
+
+.personneltext h1{
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-size: 4.5rem;
+    line-height: 1.1;
+    font-weight: 600;
+    margin: 15px 0 25px 0;
+}
+
+.personneltext p{
+    font-size: 1.2rem;
+    color: #111111;
+    width: 70%;
+}
+
+
+/* ресурсы */
+.resources{
+    padding: 80px 40px;
+    border-bottom: 1px solid #111111;
+}
+
+.resourcetitle{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 70px;
+}
+
+.resourcetitle h2{
+    width: 60%;
+    font-size: 4rem;
+    font-weight: 300;
+}
+
+.resourcelist{
+    width: 100%;
+}
+
+.resource{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 35px 0;
+    border-top: 1px solid #111111;
+}
+
+.resource:last-child{
+    border-bottom: 1px solid #111111;
+}
+
+.resource .number{
+    width: 10%;
+    font-size: 1.1rem;
+}
+
+.resourcetext{
+    width: 55%;
+}
+
+.resourcetext h2{
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+
+.resourcetext p{
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-weight: 300;
+    width: 80%;
+}
+
+.resource a{
+    width: 15%;
+    text-decoration: underline;
+    font-size: 1.1rem;
+}
+
+.resource a:hover{
+    color: #968a32;
+}
+
+
+/* объявления */
+.notices{
+    padding: 80px 40px;
+    border-bottom: 1px solid #111111;
+}
+
+.noticetitle{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+
+.noticetitle h2{
+    width: 60%;
+    font-size: 4rem;
+    font-weight: 300;
+}
+
+.notice{
+    display: grid;
+    grid-template-columns: 25% 75%;
+    padding: 25px 0;
+    border-top: 1px solid #999999;
+}
+
+/*грид*/
+.notice:last-child{
+    border-bottom: 1px solid #999999;
+}
+
+.notice p{
+    font-size: 1rem;
+}
+
+.notice h3{
+    font-size: 1.3rem;
+    font-weight: 300;
+}
+
+
+/* форма снизу */
+.request{
+    padding: 80px 40px 120px 40px;
+}
+
+.requesttitle{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+
+.requesttitle h2{
+    width: 60%;
+    font-size: 4rem;
+    font-weight: 300;
+}
+
+.request form{
+    width: 60%;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.request label{
+    font-size: 1rem;
+    margin-top: 25px;
+    margin-bottom: 5px;
+}
+
+.request input,
+.request select{
+    font-size: 1.1rem;
+    padding: 10px 5px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #111111;
+    outline: none;
+}
+
+.request textarea{
+    margin-top: 5px;
+    padding: 12px;
+    font-size: 1.1rem;
+    background-color: transparent;
+    border: 1px solid #111111;
+    resize: vertical;
+}
+
+.request input:focus,
+.request select:focus{
+    border-bottom: 2px solid #d0c24f;
+}
+
+.request textarea:focus{
+    outline: 2px solid #d0c24f;
+}
+
+.request button{
+    width: 130px;
+    margin-top: 30px;
+    padding: 10px;
+    background-color: #d0c24f;
+    border: 1px solid #111111;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.request button:hover{
+    background-color: #111111;
+    color: #d0c24f;
+}
+/* research и архивы           research и архивы           research и архивы           research и архивы           research и архивы           research и архивы           */
+.researchmain{
+    width: 100%;
+    height: 70vh;
+    background-color: #d0c24f;
+    color: #f3f0e6;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid #111111;
+}
+
+.researchlogo img{
+    position: absolute;
+    right: -10%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 65vw;
+    opacity: 0.4;
+}
+
+.researchmaintext{
+    position: absolute;
+    left: 7%;
+    bottom: 12%;
+    width: 45vw;
+    z-index: 2;
+}
+
+.researchmaintext h1{
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-size: 4.5rem;
+    line-height: 1.1;
+    font-weight: 600;
+    margin: 15px 0 25px 0;
+}
+
+.researchmaintext p{
+    font-size: 1.2rem;
+    color: #111111;
+    width: 70%;
+}
+
+
+/* записи */
+.researchvideos{
+    padding: 80px 40px;
+    border-bottom: 1px solid #111111;
+}
+
+.researchtitle{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 70px;
+}
+
+.researchtitle h2{
+    width: 60%;
+    font-size: 4rem;
+    font-weight: 300;
+}
+
+
+/* первое большое видео */
+.mainrecord{
+    border-top: 1px solid #111111;
+    border-bottom: 1px solid #111111;
+    padding: 50px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.recordimg{
+    width: 58%;
+    height: 55vh;
+    overflow: hidden;
+}
+
+.recordimg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.recordtext{
+    width: 34%;
+}
+
+.recordnumber{
+    font-size: 1rem;
+    margin-bottom: 35px;
+}
+
+.recordtext h2{
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.recordtext > p:not(.recordnumber){
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+.recordtext a{
+    font-size: 1.1rem;
+    text-decoration: underline;
+}
+
+.recordtext a:hover{
+    color: #968a32;
+}
+
+
+/* два видео снизу */
+.smallrecords{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    padding-top: 70px;
+}
+
+.smallrecord{
+    border-top: 1px solid #111111;
+    padding-top: 25px;
+}
+
+.smallrecordimg{
+    width: 100%;
+    height: 32vh;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.smallrecordimg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.smallrecord .recordnumber{
+    margin-bottom: 20px;
+}
+
+.smallrecord h2{
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-size: 2.3rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.smallrecord > p:not(.recordnumber){
+    width: 80%;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+.smallrecord a{
+    text-decoration: underline;
+    font-size: 1.1rem;
+}
+
+.smallrecord a:hover{
+    color: #968a32;
+}
+
+
+/* таблица архива */
+.archiveindex{
+    padding: 80px 40px 120px 40px;
+}
+
+.archiveindextitle{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+
+.archiveindextitle h2{
+    width: 60%;
+    font-size: 4rem;
+    font-weight: 300;
+}
+
+.archivetable{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.archivetable th{
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 18px 10px;
+    border-top: 1px solid #111111;
+    border-bottom: 1px solid #111111;
+}
+
+.archivetable td{
+    font-size: 1.1rem;
+    font-weight: 300;
+    padding: 22px 10px;
+    border-bottom: 1px solid #999999;
+}
+
+.archivetable tr:hover{
+    background-color: #e7e2d2;
+}
+.headernav a.active {
+    opacity: 1;
+    font-weight: 600;
+}
