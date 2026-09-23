@@ -776,3 +776,372 @@ a {
     opacity: 1;
     font-weight: 600;
 }
+
+/* assignment 2 - наши две страницы */
+.headernav a.active{
+    opacity: 1;
+    font-weight: 600;
+}
+
+/* research */
+.researchmain, .personnelmain{
+    width: 100%;
+    height: 70vh;
+    background-color: #d0c24f;
+    color: #f3f0e6;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid #111111;
+}
+.researchlogo img, .personnellogo img{
+    position: absolute;
+    right: -10%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 65vw;
+    opacity: 0.4;
+}
+.researchmaintext, .personneltext{
+    position: absolute;
+    left: 7%;
+    bottom: 12%;
+    width: 45vw;
+    z-index: 2;
+}
+.researchmaintext h1, .personneltext h1{
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-size: 4.5rem;
+    line-height: 1.1;
+    font-weight: 600;
+    margin: 15px 0 25px 0;
+}
+.researchmaintext p, .personneltext p{
+    font-size: 1.2rem;
+    color: #111111;
+    width: 75%;
+}
+
+.researchrecords, .resources{
+    padding: 80px 40px;
+    border-bottom: 1px solid #111111;
+}
+.researchtitle, .resourcetitle, .gallerytitle{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+.researchtitle h2, .resourcetitle h2, .gallerytitle h2{
+    width: 100%;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 300;
+}
+
+/* flex row cards */
+.recordcards, .resourcecards{
+    display: flex;
+    gap: 30px;
+    align-items: stretch;
+}
+.recordcard, .resourcecard{
+    flex: 1;
+    background-color: #f8f8f8;
+    border: 1px solid #b9b5a7;
+    display: flex;
+    flex-direction: column;
+    transition: 0.2s;
+}
+.recordcard:hover, .resourcecard:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+.recordcard > img, .resourcecard > img{
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+.recordcardtext, .resourcecardtext{
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.recordnum, .resnum{
+    font-size: 0.9rem;
+    margin-bottom: 18px;
+}
+.recordcard h3, .resourcecard h3{
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+.recordcardtext > p:not(.recordnum), .resourcecardtext > p:not(.resnum){
+    font-size: 1.05rem;
+    line-height: 1.5;
+    font-weight: 300;
+    margin-bottom: 25px;
+}
+.recordbtn, .resourcebtn{
+    margin-top: auto;
+    width: fit-content;
+    border: 1px solid #111111;
+    padding: 9px 14px;
+    border-radius: 18px;
+    font-size: 0.9rem;
+}
+.recordbtn:hover, .resourcebtn:hover{
+    background-color: #111111;
+    color: #d0c24f;
+}
+
+/* grid areas для архива */
+.archivegrid, .staffgrid{
+    margin: 80px 40px;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "head head"
+        "side main"
+        "foot foot";
+    gap: 25px 40px;
+}
+.archivegridhead, .staffgridhead{
+    grid-area: head;
+    border-bottom: 1px solid #111111;
+    padding-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+.archivegridhead h2, .staffgridhead h2{
+
+    width: 100%;
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 300;
+}
+.archiveside, .staffside{
+    grid-area: side;
+    border-right: 1px solid #aaa596;
+    padding-right: 20px;
+}
+.archiveside h3, .staffside h3{
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+.archiveside p, .staffside p{
+    margin-bottom: 10px;
+    color: #555;
+}
+.archivemainarea, .staffmainarea{
+    grid-area: main;
+}
+.archivegridfoot, .staffgridfoot{
+    grid-area: foot;
+    border-top: 1px solid #111111;
+    padding-top: 15px;
+    font-size: 0.9rem;
+}
+
+.archivetable{
+    width: 100%;
+    border-collapse: collapse;
+}
+.archivetable th{
+    text-align: left;
+    padding: 14px 8px;
+    border-bottom: 1px solid #111111;
+}
+.archivetable td{
+    padding: 18px 8px;
+    border-bottom: 1px solid #aaa596;
+}
+.archivetable tr:hover{
+    background-color: #e7e2d2;
+}
+
+/* gallery grid */
+.gallerysection{
+    padding: 80px 40px 110px 40px;
+}
+.researchgallery{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 230px;
+    gap: 18px;
+}
+.galleryitem{
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+}
+.galleryitem img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.25s;
+}
+.galleryitem figcaption{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 18px;
+    background-color: rgba(0,0,0,0.72);
+    color: #ffffff;
+    opacity: 0;
+    transition: 0.25s;
+}
+.galleryitem:hover img{
+    transform: scale(1.04);
+}
+.galleryitem:hover figcaption{
+    opacity: 1;
+}
+
+/* personnel */
+.notice{
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    padding: 20px 0;
+    border-top: 1px solid #aaa596;
+}
+.notice:last-child{
+    border-bottom: 1px solid #aaa596;
+}
+.notice h3{
+    font-size: 1.15rem;
+    font-weight: 300;
+}
+
+.request{
+    margin-top: 70px;
+    padding-top: 40px;
+    border-top: 1px solid #111111;
+}
+.request h2{
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 25px;
+}
+.request form{
+    display: flex;
+    flex-direction: column;
+}
+.request label{
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+.request input, .request select{
+    border: none;
+    border-bottom: 1px solid #111111;
+    background-color: transparent;
+    padding: 10px 5px;
+    font-size: 1rem;
+    outline: none;
+}
+.request textarea{
+    padding: 10px;
+    background-color: transparent;
+    border: 1px solid #111111;
+    resize: vertical;
+}
+.request button{
+    width: 120px;
+    margin-top: 25px;
+    padding: 10px;
+    border: 1px solid #111111;
+    border-radius: 18px;
+    background-color: #d0c24f;
+    cursor: pointer;
+}
+.request button:hover{
+    background-color: #111111;
+    color: #d0c24f;
+}
+
+#archiveindex, #request{
+    scroll-margin-top: 85px;
+}
+
+/* под маленький экран */
+@media (max-width: 1000px){
+    .header{
+        padding: 10px 35px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .headernav{
+        gap: 28px;
+        flex-wrap: wrap;
+    }
+    .recordcards, .resourcecards{
+        flex-direction: column;
+    }
+    .recordcard > img, .resourcecard > img{
+        height: 300px;
+    }
+    .archivegrid, .staffgrid{
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "head"
+            "side"
+            "main"
+            "foot";
+    }
+    .archiveside, .staffside{
+        border-right: none;
+        border-bottom: 1px solid #aaa596;
+        padding-bottom: 20px;
+    }
+    .researchgallery{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px){
+    body{
+        padding-top: 120px;
+    }
+    .header{
+        position: absolute;
+        padding: 10px 20px;
+    }
+    .headernav{
+        gap: 12px;
+        font-size: 0.85rem;
+    }
+    .researchmaintext, .personneltext{
+        width: 80vw;
+    }
+    .researchmaintext h1, .personneltext h1{
+        font-size: 3rem;
+    }
+    .researchtitle, .resourcetitle, .gallerytitle,
+    .archivegridhead, .staffgridhead{
+        flex-direction: column;
+        gap: 15px;
+    }
+    .researchtitle h2, .resourcetitle h2, .gallerytitle h2,
+    .archivegridhead h2, .staffgridhead h2{
+        width: 100%;
+    text-align: center;
+    font-size: 2.7rem;
+    }
+    .archivegrid, .staffgrid{
+        margin: 60px 20px;
+    }
+    .researchrecords, .resources, .gallerysection{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .researchgallery{
+        grid-template-columns: 1fr;
+    }
+    .notice{
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+}
+
