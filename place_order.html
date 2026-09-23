@@ -6,25 +6,23 @@
     <title>Place Order</title>
     <link rel="stylesheet" href="isa.css">
 </head>
-<body>
+<body class="order-page">
 
-    <header class="header">
-        <div class="headerlogo">
-            <img src="assets/asyncbiglogo.png" alt="A-Sync Logo">
+   <header>
+        <div class="logo">
+            <a href="index.html"><img src="assets/asyncbiglogo.png" alt="Async Foundation Logo"></a>
         </div>
-        <nav class="headernav">
+        <nav class="nav">
             <a href="index.html">HOME</a>
-            <a href="tech.html">TECHNOLOGY</a>
+            <a href="#">TECHNOLOGY</a>
             <a href="complex.html">THE COMPLEX</a>
-            <a href="research.html">ARCHIVE</a>
-            <a href="personnel.html">FOR PERSONNEL</a>
+            <a href="#">ARCHIVE</a>
+            <a href="#">FOR PERSONNEL</a>
+            <a href="place_order.html" class="button nav-btn active-btn">PLACE ORDER</a>
         </nav>
-        <div class="headeraction">
-            <a href="place_order.html" class="btnbuy">PLACE ORDER</a>
-        </div>
     </header>
 
-    <section class="main order-hero">
+    <main class="main order-hero">
         <div class="mainlogo">
             <img src="assets/asyncbiglogo.png" alt="A-Sync Background Logo">
         </div>
@@ -34,7 +32,7 @@
                 <p>Submit your enterprise specifications to receive an LPMDS space allocation proposal.</p>
             </div>
         </div>
-    </section>
+    </main>
 
     <section class="white">
         <section class="allcontent">
@@ -46,6 +44,35 @@
                 </div>
 
                 <form class="order-form" action="#" method="POST">
+                    <fieldset class="facility-select">
+                        <legend>Select Facility Type</legend>
+                        <div class="facility-options">
+                            <label class="facility-option">
+                                <input type="radio" name="facilityType" value="low-risk-storage" required>
+                                <span class="facility-card-content">
+                                    <img src="assets/level_10.png" alt="Low-Risk Storage facility">
+                                    <strong>The Roads</strong>
+                                    <span>Sub-Level 10</span>
+                                </span>
+                            </label>
+                            <label class="facility-option">
+                                <input type="radio" name="facilityType" value="hydro-spatial-unit">
+                                <span class="facility-card-content">
+                                    <img src="assets/level_7.png" alt="Hydro-Spatial Unit facility">
+                                    <strong> The House Unit</strong>
+                                    <span>Sub-Level 7</span>
+                                </span>
+                            </label>
+                            <label class="facility-option">
+                                <input type="radio" name="facilityType" value="high-containment-zone">
+                                <span class="facility-card-content">
+                                    <img src="assets/level_402.png" alt="High-Containment Zone facility">
+                                    <strong>The Barbie Room</strong>
+                                    <span>Sub-Level 402</span>
+                                </span>
+                            </label>
+                        </div>
+                    </fieldset>
                     
                     <div class="form-row">
                         <div class="form-group">
@@ -65,16 +92,6 @@
                             <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" required>
                         </div>
 
-                        <div class="form-group">
-                            <label for="spaceType">Desired Facility Type *</label>
-                            <select id="spaceType" name="spaceType" required>
-                                <option value="" disabled selected>Select space category</option>
-                                <option value="logistics">Industrial & Logistics Storage</option>
-                                <option value="data">Data Vault & Infrastructure Hub</option>
-                                <option value="office">Modular Corporate HQ / Offices</option>
-                                <option value="custom">Custom Research Installation</option>
-                            </select>
-                        </div>
                     </div>
 
                     <div class="form-row">
@@ -99,7 +116,7 @@
                     </div>
 
                     <div class="form-checkbox">
-                        <input type="checkbox" id="terms" required>
+                        <input type="checkbox" id="terms" name="terms" required>
                         <label for="terms">I agree to A-Sync spatial allocation policies and data privacy terms.</label>
                     </div>
 
