@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "IBM Plex Sans Condensed", sans-serif;
+    /* дефолт шрифт отсюда брать */
 }
 
 body {
@@ -12,6 +13,7 @@ body {
     padding-top: 60px; 
     display: grid;
     grid-template-rows: 1fr auto;
+    /* для футера грид не трогать */
 }
 .white{
     width: 100%;
@@ -28,6 +30,7 @@ a {
     text-decoration: none;
 }
 
+/* header */
 .header {
     background-color: #d0c24f; 
     color: #000000;
@@ -61,6 +64,7 @@ a {
 }
 
 .headernav a {
+    /* color: #ffffff; */
     opacity: 0.8;
 }
 .headernav a:hover {
@@ -69,6 +73,7 @@ a {
 
 .btnbuy {
     background-color: transparent; 
+    /* color: #ffffff; */
     border: 1px solid #000000;
     padding: 8px 16px;
     border-radius: 20px; 
@@ -91,6 +96,9 @@ a {
     justify-content: flex-start;
     border-bottom: 1px solid #111111;
 }
+
+
+
 
 .mainlogo img{
     position: absolute;
@@ -118,7 +126,7 @@ a {
     width: 43vw;
 }
 
-.maintext h1 {
+.main h1 {
     font-family: Georgia, Times, "Times New Roman", serif; 
     font-size: 4.5rem;
     line-height: 1.1;
@@ -126,7 +134,7 @@ a {
     font-weight: 600;
 }
 
-.maintext p {
+.main p {
     font-size: 1.2rem;
     opacity: 0.8;
     margin-top: 20px;
@@ -137,6 +145,7 @@ a {
     background-color: #f3f0e6; 
     color: #000000;
     padding: 80px 40px;
+    /* border-bottom: 1px solid #111111; */
 }
 
 .newsgallery a:hover {
@@ -148,6 +157,7 @@ a {
     margin-bottom: 40px;
     font-size: 2rem;
     font-weight: 700;
+    
 }
 
 .newsgrid {
@@ -184,6 +194,7 @@ a {
     border-radius: 10px;
     margin-bottom: 15px;
     overflow: hidden;
+
 }
 .postimg img{
     height: 100%;
@@ -224,21 +235,28 @@ a {
     background-color: #f3f0e6;
     color: #000000;
     padding: 60px 40px 100px 40px;
+    /* border-top: 1px solid #eee; */
     border-bottom: 1px solid #111111;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    
+
 }
 
 .aboutus .text {
     width: 60%;
+    
 }
 .aboutus .text h2{
+    /* text-align: right; */
     font-size: 4rem;
     font-weight: 300;  
 }
 
+
 .aboutus .text p {
+    
     line-height: 1.7;
     font-size: 1.2rem;
     color: #333;
@@ -273,6 +291,7 @@ a {
     width: 50%;
     height: 38vh;
     overflow: hidden;
+    
 }
 .container img{
     width: 100%;
@@ -280,6 +299,7 @@ a {
     object-fit: cover;
 }
 .perehody .text{
+
     height: 24vh;
     width: 35%;
     display: flex;
@@ -309,198 +329,375 @@ a {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    
 }
 .footerleft{
     text-align: left;
 }
-
-.techbadge {
-    font-size: 0.85rem;
-    letter-spacing: 3px;
-    opacity: 0.7;
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 12px;
-    color: #000;
+/* assignment 2 - наши две страницы */
+.headernav a.active{
+    opacity: 1;
     font-weight: 600;
 }
 
-.techcoresection {
+/* research */
+.researchmain, .personnelmain{
+    width: 100%;
+    height: 70vh;
+    background-color: #d0c24f;
+    color: #f3f0e6;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid #111111;
+}
+.researchlogo img, .personnellogo img{
+    position: absolute;
+    right: -10%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 65vw;
+    opacity: 0.4;
+}
+.researchmaintext, .personneltext{
+    position: absolute;
+    left: 7%;
+    bottom: 12%;
+    width: 45vw;
+    z-index: 2;
+}
+.researchmaintext h1, .personneltext h1{
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-size: 4.5rem;
+    line-height: 1.1;
+    font-weight: 600;
+    margin: 15px 0 25px 0;
+}
+.researchmaintext p, .personneltext p{
+    font-size: 1.2rem;
+    color: #111111;
+    width: 75%;
+}
+
+.researchrecords, .resources{
+    padding: 80px 40px;
+    border-bottom: 1px solid #111111;
+}
+.researchtitle, .resourcetitle, .gallerytitle{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+.researchtitle h2, .resourcetitle h2, .gallerytitle h2{
+    width: 100%;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 300;
+}
+
+/* flex row cards */
+.recordcards, .resourcecards{
+    display: flex;
+    gap: 30px;
+    align-items: stretch;
+}
+.recordcard, .resourcecard{
+    flex: 1;
+    background-color: #f8f8f8;
+    border: 1px solid #b9b5a7;
+    display: flex;
+    flex-direction: column;
+    transition: 0.2s;
+}
+.recordcard:hover, .resourcecard:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+.recordcard > img, .resourcecard > img{
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+.recordcardtext, .resourcecardtext{
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.recordnum, .resnum{
+    font-size: 0.9rem;
+    margin-bottom: 18px;
+}
+.recordcard h3, .resourcecard h3{
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+.recordcardtext > p:not(.recordnum), .resourcecardtext > p:not(.resnum){
+    font-size: 1.05rem;
+    line-height: 1.5;
+    font-weight: 300;
+    margin-bottom: 25px;
+}
+.recordbtn, .resourcebtn{
+    margin-top: auto;
+    width: fit-content;
+    border: 1px solid #111111;
+    padding: 9px 14px;
+    border-radius: 18px;
+    font-size: 0.9rem;
+}
+.recordbtn:hover, .resourcebtn:hover{
+    background-color: #111111;
+    color: #d0c24f;
+}
+
+/* grid areas для архива */
+.archivegrid, .staffgrid{
+    margin: 80px 40px;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "head head"
+        "side main"
+        "foot foot";
+    gap: 25px 40px;
+}
+.archivegridhead, .staffgridhead{
+    grid-area: head;
+    border-bottom: 1px solid #111111;
+    padding-bottom: 25px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 100px 40px;
-    border-bottom: 1px solid #111111;
-    gap: 60px;
 }
+.archivegridhead h2, .staffgridhead h2{
 
-.techcoretext {
-    width: 45%;
-}
-
-.techcoretext p:first-child {
-    font-size: 0.9rem;
-    opacity: 0.6;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-}
-
-.techcoretext h2 {
-    font-size: 3.2rem;
+    width: 100%;
+    text-align: center;
+    font-size: 3.5rem;
     font-weight: 300;
-    line-height: 1.15;
-    margin-bottom: 25px;
-    font-family: Georgia, Times, "Times New Roman", serif;
+}
+.archiveside, .staffside{
+    grid-area: side;
+    border-right: 1px solid #aaa596;
+    padding-right: 20px;
+}
+.archiveside h3, .staffside h3{
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+.archiveside p, .staffside p{
+    margin-bottom: 10px;
+    color: #555;
+}
+.archivemainarea, .staffmainarea{
+    grid-area: main;
+}
+.archivegridfoot, .staffgridfoot{
+    grid-area: foot;
+    border-top: 1px solid #111111;
+    padding-top: 15px;
+    font-size: 0.9rem;
 }
 
-.techdesc {
-    font-size: 1.15rem;
-    line-height: 1.7;
-    color: #333;
+.archivetable{
+    width: 100%;
+    border-collapse: collapse;
+}
+.archivetable th{
+    text-align: left;
+    padding: 14px 8px;
+    border-bottom: 1px solid #111111;
+}
+.archivetable td{
+    padding: 18px 8px;
+    border-bottom: 1px solid #aaa596;
+}
+.archivetable tr:hover{
+    background-color: #e7e2d2;
 }
 
-.techcoreimg {
-    width: 50%;
-    height: 420px;
-    border-radius: 8px;
+/* gallery grid */
+.gallerysection{
+    padding: 80px 40px 110px 40px;
+}
+.researchgallery{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 230px;
+    gap: 18px;
+}
+.galleryitem{
+    position: relative;
     overflow: hidden;
+    margin: 0;
 }
-
-.techcoreimg img {
+.galleryitem img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: 0.25s;
 }
-
-.techspecscontainer {
-    padding: 100px 40px;
-    border-bottom: 1px solid #111111;
+.galleryitem figcaption{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 18px;
+    background-color: rgba(0,0,0,0.72);
+    color: #ffffff;
+    opacity: 0;
+    transition: 0.25s;
 }
-
-.sectionheadertitle {
-    margin-bottom: 50px;
+.galleryitem:hover img{
+    transform: scale(1.04);
 }
-
-.sectionheadertitle p {
-    font-size: 0.9rem;
-    opacity: 0.6;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-}
-
-.sectionheadertitle h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-}
-
-.techspecgrid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
-
-.techspecitem {
-    background: #f8f8f8;
-    border: 1px solid #e0dccc;
-    padding: 35px 30px;
-    border-radius: 6px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.specnum {
-    font-size: 0.8rem;
-    font-weight: 700;
-    opacity: 0.5;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-    display: block;
-}
-
-.techspecitem h3 {
-    font-size: 1.3rem;
-    font-weight: 700;
-    margin-bottom: 15px;
-    line-height: 1.3;
-}
-
-.techspecitem p {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.5;
-}
-
-.techsafetysection {
-    padding: 100px 40px;
-    display: flex;
-    justify-content: space-between;
-    gap: 60px;
-}
-
-.safetyleft {
-    width: 35%;
-}
-
-.safetyleft p:first-child {
-    font-size: 0.9rem;
-    opacity: 0.6;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-}
-
-.safetyleft h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 20px;
-}
-
-.safetysub {
-    font-size: 1.1rem;
-    color: #555;
-    line-height: 1.6;
-}
-
-.safetyright {
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-.safetyrow {
-    background: #f8f8f8;
-    padding: 25px;
-    border-radius: 6px;
-    border-left: 3px solid #d0c24f;
-    display: flex;
-    gap: 25px;
-    align-items: flex-start;
-}
-
-.safetyrow .code {
-    font-weight: 700;
-    font-size: 0.9rem;
-    background: #e8e4d5;
-    padding: 5px 10px;
-    border-radius: 4px;
-    white-space: nowrap;
-}
-
-.safetyrow h4 {
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 8px;
-}
-
-.safetyrow p {
-    font-size: 0.95rem;
-    color: #555;
-    line-height: 1.5;
-}
-
-.headernav a.active {
+.galleryitem:hover figcaption{
     opacity: 1;
-    font-weight: 600;
+}
+
+/* personnel */
+.notice{
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    padding: 20px 0;
+    border-top: 1px solid #aaa596;
+}
+.notice:last-child{
+    border-bottom: 1px solid #aaa596;
+}
+.notice h3{
+    font-size: 1.15rem;
+    font-weight: 300;
+}
+
+.request{
+    margin-top: 70px;
+    padding-top: 40px;
+    border-top: 1px solid #111111;
+}
+.request h2{
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 25px;
+}
+.request form{
+    display: flex;
+    flex-direction: column;
+}
+.request label{
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+.request input, .request select{
+    border: none;
+    border-bottom: 1px solid #111111;
+    background-color: transparent;
+    padding: 10px 5px;
+    font-size: 1rem;
+    outline: none;
+}
+.request textarea{
+    padding: 10px;
+    background-color: transparent;
+    border: 1px solid #111111;
+    resize: vertical;
+}
+.request button{
+    width: 120px;
+    margin-top: 25px;
+    padding: 10px;
+    border: 1px solid #111111;
+    border-radius: 18px;
+    background-color: #d0c24f;
+    cursor: pointer;
+}
+.request button:hover{
+    background-color: #111111;
+    color: #d0c24f;
+}
+
+#archiveindex, #request{
+    scroll-margin-top: 85px;
+}
+
+/* под маленький экран */
+@media (max-width: 1000px){
+    .header{
+        padding: 10px 35px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .headernav{
+        gap: 28px;
+        flex-wrap: wrap;
+    }
+    .recordcards, .resourcecards{
+        flex-direction: column;
+    }
+    .recordcard > img, .resourcecard > img{
+        height: 300px;
+    }
+    .archivegrid, .staffgrid{
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "head"
+            "side"
+            "main"
+            "foot";
+    }
+    .archiveside, .staffside{
+        border-right: none;
+        border-bottom: 1px solid #aaa596;
+        padding-bottom: 20px;
+    }
+    .researchgallery{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px){
+    body{
+        padding-top: 120px;
+    }
+    .header{
+        position: absolute;
+        padding: 10px 20px;
+    }
+    .headernav{
+        gap: 12px;
+        font-size: 0.85rem;
+    }
+    .researchmaintext, .personneltext{
+        width: 80vw;
+    }
+    .researchmaintext h1, .personneltext h1{
+        font-size: 3rem;
+    }
+    .researchtitle, .resourcetitle, .gallerytitle,
+    .archivegridhead, .staffgridhead{
+        flex-direction: column;
+        gap: 15px;
+    }
+    .researchtitle h2, .resourcetitle h2, .gallerytitle h2,
+    .archivegridhead h2, .staffgridhead h2{
+        width: 100%;
+    text-align: center;
+    font-size: 2.7rem;
+    }
+    .archivegrid, .staffgrid{
+        margin: 60px 20px;
+    }
+    .researchrecords, .resources, .gallerysection{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .researchgallery{
+        grid-template-columns: 1fr;
+    }
+    .notice{
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
 }
