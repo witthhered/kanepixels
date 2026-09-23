@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Order</title>
+    <link rel="stylesheet" href="isa.css">
+</head>
+<body class="order-page">
+
+   <header>
+        <div class="logo">
+            <a href="index.html"><img src="assets/asyncbiglogo.png" alt="Async Foundation Logo"></a>
+        </div>
+        <nav class="nav">
+            <a href="index.html">HOME</a>
+            <a href="#">TECHNOLOGY</a>
+            <a href="complex.html">THE COMPLEX</a>
+            <a href="#">ARCHIVE</a>
+            <a href="#">FOR PERSONNEL</a>
+            <a href="place_order.html" class="button nav-btn active-btn">PLACE ORDER</a>
+        </nav>
+    </header>
+
+    <main class="main order-hero">
+        <div class="mainlogo">
+            <img src="assets/asyncbiglogo.png" alt="A-Sync Background Logo">
+        </div>
+        <div class="maincontainer">
+            <div class="maintext">
+                <h1>Acquire Your Custom Manufactured Space.</h1>
+                <p>Submit your enterprise specifications to receive an LPMDS space allocation proposal.</p>
+            </div>
+        </div>
+    </main>
+
+    <section class="white">
+        <section class="allcontent">
+            <div class="order-wrapper">
+                
+                <div class="order-intro">
+                    <h2>Space Acquisition Form</h2>
+                    <p>Our commercial department will process your request within 24 business hours. All spatial allocations are backed by A-Sync protocol guarantees.</p>
+                </div>
+
+                <form class="order-form" action="#" method="POST">
+                    <fieldset class="facility-select">
+                        <legend>Select Facility Type</legend>
+                        <div class="facility-options">
+                            <label class="facility-option">
+                                <input type="radio" name="facilityType" value="low-risk-storage" required>
+                                <span class="facility-card-content">
+                                    <img src="assets/level_10.png" alt="Low-Risk Storage facility">
+                                    <strong>The Roads</strong>
+                                    <span>Sub-Level 10</span>
+                                </span>
+                            </label>
+                            <label class="facility-option">
+                                <input type="radio" name="facilityType" value="hydro-spatial-unit">
+                                <span class="facility-card-content">
+                                    <img src="assets/level_7.png" alt="Hydro-Spatial Unit facility">
+                                    <strong> The House Unit</strong>
+                                    <span>Sub-Level 7</span>
+                                </span>
+                            </label>
+                            <label class="facility-option">
+                                <input type="radio" name="facilityType" value="high-containment-zone">
+                                <span class="facility-card-content">
+                                    <img src="assets/level_402.png" alt="High-Containment Zone facility">
+                                    <strong>The Barbie Room</strong>
+                                    <span>Sub-Level 402</span>
+                                </span>
+                            </label>
+                        </div>
+                    </fieldset>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">Full Name / Organization *</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="e.g. John Doe / Apex Corp" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Corporate Email Address *</label>
+                            <input type="email" id="email" name="email" placeholder="name@company.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" required>
+                        </div>
+
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="sqmeters">Required Area (in Sq. Meters)</label>
+                            <input type="number" id="sqmeters" name="sqmeters" placeholder="e.g. 50000" min="1000">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="timeline">Target Deployment Timeline</label>
+                            <select id="timeline" name="timeline">
+                                <option value="immediate">Immediate (Q1)</option>
+                                <option value="6months">Within 6 Months</option>
+                                <option value="1year">Within 1 Year</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="message">Additional Project Requirements</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Specify ceiling heights, power requirements, security clearances, or custom entry portal placement..."></textarea>
+                    </div>
+
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">I agree to A-Sync spatial allocation policies and data privacy terms.</label>
+                    </div>
+
+                    <button type="submit" class="submit-btn">SUBMIT REQUEST</button>
+                </form>
+
+            </div>
+        </section>
+    </section>
+
+    <footer class="footer">
+        <div class="footerleft">
+            <p>Kamash Abilmansur</p>
+            <p>Daniyar Ukin</p>
+            <p>Islam Nurmukhammet</p>
+        </div>
+        <p>&copy; 2017 A-SYNC by Kane Pixels. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
