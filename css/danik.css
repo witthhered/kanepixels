@@ -10,10 +10,15 @@
 
 body {
     color: #333;
-    padding-top: 60px; 
+    padding-top: 60px;
     display: grid;
     grid-template-rows: 1fr auto;
     /* для футера грид не трогать */
+}
+/* research.html / personnel.html используют Bootstrap navbar (sticky, а не fixed),
+   поэтому им не нужен запасной отступ под старый .header */
+body.bs-page{
+    padding-top: 0;
 }
 .white{
     width: 100%;
@@ -334,233 +339,14 @@ a {
 .footerleft{
     text-align: left;
 }
-
-/* personnel    personnell    personnell    personnell    personnell    personnell    personnell    personnell    personnell    personnell    personnell    personnell    personnell */
-.personnelmain{
-    width: 100%;
-    height: 70vh;
-    background-color: #d0c24f;
-    color: #f3f0e6;
-    position: relative;
-    overflow: hidden;
-    border-bottom: 1px solid #111111;
-}
-
-.personnellogo img{
-    position: absolute;
-    right: -8%;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 60vw;
-    opacity: 0.4;
-}
-
-.personneltext{
-    position: absolute;
-    left: 7%;
-    bottom: 12%;
-    width: 45vw;
-    z-index: 2;
-}
-
-.personneltext h1{
-    font-family: Georgia, Times, "Times New Roman", serif;
-    font-size: 4.5rem;
-    line-height: 1.1;
+/* assignment 2 - наши две страницы */
+.headernav a.active{
+    opacity: 1;
     font-weight: 600;
-    margin: 15px 0 25px 0;
 }
 
-.personneltext p{
-    font-size: 1.2rem;
-    color: #111111;
-    width: 70%;
-}
-
-
-/* ресурсы */
-.resources{
-    padding: 80px 40px;
-    border-bottom: 1px solid #111111;
-}
-
-.resourcetitle{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 70px;
-}
-
-.resourcetitle h2{
-    width: 60%;
-    font-size: 4rem;
-    font-weight: 300;
-}
-
-.resourcelist{
-    width: 100%;
-}
-
-.resource{
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 35px 0;
-    border-top: 1px solid #111111;
-}
-
-.resource:last-child{
-    border-bottom: 1px solid #111111;
-}
-
-.resource .number{
-    width: 10%;
-    font-size: 1.1rem;
-}
-
-.resourcetext{
-    width: 55%;
-}
-
-.resourcetext h2{
-    font-family: Georgia, Times, "Times New Roman", serif;
-    font-size: 2rem;
-    font-weight: 400;
-    margin-bottom: 12px;
-}
-
-.resourcetext p{
-    font-size: 1.1rem;
-    line-height: 1.6;
-    font-weight: 300;
-    width: 80%;
-}
-
-.resource a{
-    width: 15%;
-    text-decoration: underline;
-    font-size: 1.1rem;
-}
-
-.resource a:hover{
-    color: #968a32;
-}
-
-
-/* объявления */
-.notices{
-    padding: 80px 40px;
-    border-bottom: 1px solid #111111;
-}
-
-.noticetitle{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 60px;
-}
-
-.noticetitle h2{
-    width: 60%;
-    font-size: 4rem;
-    font-weight: 300;
-}
-
-.notice{
-    display: grid;
-    grid-template-columns: 25% 75%;
-    padding: 25px 0;
-    border-top: 1px solid #999999;
-}
-
-/*грид*/
-.notice:last-child{
-    border-bottom: 1px solid #999999;
-}
-
-.notice p{
-    font-size: 1rem;
-}
-
-.notice h3{
-    font-size: 1.3rem;
-    font-weight: 300;
-}
-
-
-/* форма снизу */
-.request{
-    padding: 80px 40px 120px 40px;
-}
-
-.requesttitle{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 60px;
-}
-
-.requesttitle h2{
-    width: 60%;
-    font-size: 4rem;
-    font-weight: 300;
-}
-
-.request form{
-    width: 60%;
-    margin-left: auto;
-    display: flex;
-    flex-direction: column;
-}
-
-.request label{
-    font-size: 1rem;
-    margin-top: 25px;
-    margin-bottom: 5px;
-}
-
-.request input,
-.request select{
-    font-size: 1.1rem;
-    padding: 10px 5px;
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid #111111;
-    outline: none;
-}
-
-.request textarea{
-    margin-top: 5px;
-    padding: 12px;
-    font-size: 1.1rem;
-    background-color: transparent;
-    border: 1px solid #111111;
-    resize: vertical;
-}
-
-.request input:focus,
-.request select:focus{
-    border-bottom: 2px solid #d0c24f;
-}
-
-.request textarea:focus{
-    outline: 2px solid #d0c24f;
-}
-
-.request button{
-    width: 130px;
-    margin-top: 30px;
-    padding: 10px;
-    background-color: #d0c24f;
-    border: 1px solid #111111;
-    border-radius: 20px;
-    font-size: 1rem;
-    cursor: pointer;
-}
-
-.request button:hover{
-    background-color: #111111;
-    color: #d0c24f;
-}
-/* research и архивы           research и архивы           research и архивы           research и архивы           research и архивы           research и архивы           */
-.researchmain{
+/* research */
+.researchmain, .personnelmain{
     width: 100%;
     height: 70vh;
     background-color: #d0c24f;
@@ -569,8 +355,7 @@ a {
     overflow: hidden;
     border-bottom: 1px solid #111111;
 }
-
-.researchlogo img{
+.researchlogo img, .personnellogo img{
     position: absolute;
     right: -10%;
     top: 50%;
@@ -578,201 +363,330 @@ a {
     width: 65vw;
     opacity: 0.4;
 }
-
-.researchmaintext{
+.researchmaintext, .personneltext{
     position: absolute;
     left: 7%;
     bottom: 12%;
     width: 45vw;
     z-index: 2;
 }
-
-.researchmaintext h1{
+.researchmaintext h1, .personneltext h1{
     font-family: Georgia, Times, "Times New Roman", serif;
     font-size: 4.5rem;
     line-height: 1.1;
     font-weight: 600;
     margin: 15px 0 25px 0;
 }
-
-.researchmaintext p{
+.researchmaintext p, .personneltext p{
     font-size: 1.2rem;
     color: #111111;
-    width: 70%;
+    width: 75%;
 }
 
+/* ===================================================================
+   Assignment 3 — Bootstrap integration (research.html / personnel.html)
+   Спейсинг (margin/padding) для секций ниже теперь задаётся утилити-
+   классами Bootstrap прямо в HTML (py-, px-, mt-lg-4, px-sm-2 и т.д.),
+   поэтому здесь остаются только цвета/границы/шрифты, которые
+   Bootstrap сам не покрывает.
+   =================================================================== */
 
-/* записи */
-.researchvideos{
-    padding: 80px 40px;
+/* css/bootstrap.min.css — это сборка Bootswatch "Cerulean" поверх
+   Bootstrap 5.3.2 (обычный bootstrap.min.css с CDN не открывался в
+   нашей сети). У неё перекрашены акцентные CSS-переменные (например,
+   заголовки становятся синими). Возвращаем переменные к дефолтным
+   значениям чистого Bootstrap, чтобы тема сайта осталась жёлто-чёрной
+   A-Sync, а не голубой Cerulean. */
+:root{
+    --bs-primary: #0d6efd;
+    --bs-primary-rgb: 13,110,253;
+    --bs-secondary: #6c757d;
+    --bs-secondary-rgb: 108,117,125;
+    --bs-success: #198754;
+    --bs-info: #0dcaf0;
+    --bs-warning: #ffc107;
+    --bs-danger: #dc3545;
+    --bs-light: #f8f9fa;
+    --bs-dark: #212529;
+    --bs-body-color: #212529;
+    --bs-emphasis-color: #000000;
+    --bs-heading-color: inherit;
+    --bs-link-color: #111111;
+    --bs-link-hover-color: #000000;
+}
+
+/* Bootstrap navbar theme (Task 5) */
+.asyncnavbar{
+    background-color: #d0c24f;
     border-bottom: 1px solid #111111;
 }
-
-.researchtitle{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 70px;
+.asyncnavbar .navbar-brand img{
+    width: 9vh;
+    min-width: 48px;
 }
-
-.researchtitle h2{
-    width: 60%;
-    font-size: 4rem;
-    font-weight: 300;
-}
-
-
-/* первое большое видео */
-.mainrecord{
-    border-top: 1px solid #111111;
-    border-bottom: 1px solid #111111;
-    padding: 50px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.recordimg{
-    width: 58%;
-    height: 55vh;
-    overflow: hidden;
-}
-
-.recordimg img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.recordtext{
-    width: 34%;
-}
-
-.recordnumber{
-    font-size: 1rem;
-    margin-bottom: 35px;
-}
-
-.recordtext h2{
-    font-family: Georgia, Times, "Times New Roman", serif;
-    font-size: 3rem;
+.asyncnavbar .nav-link{
+    color: #000000;
+    opacity: 0.8;
     font-weight: 400;
-    margin-bottom: 20px;
 }
-
-.recordtext > p:not(.recordnumber){
-    font-size: 1.1rem;
-    line-height: 1.6;
-    font-weight: 300;
-    margin-bottom: 40px;
+.asyncnavbar .nav-link:hover,
+.asyncnavbar .nav-link:focus{
+    color: #ffffff;
+    opacity: 1;
 }
-
-.recordtext a{
-    font-size: 1.1rem;
-    text-decoration: underline;
-}
-
-.recordtext a:hover{
-    color: #968a32;
-}
-
-
-/* два видео снизу */
-.smallrecords{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    padding-top: 70px;
-}
-
-.smallrecord{
-    border-top: 1px solid #111111;
-    padding-top: 25px;
-}
-
-.smallrecordimg{
-    width: 100%;
-    height: 32vh;
-    overflow: hidden;
-    margin-bottom: 30px;
-}
-
-.smallrecordimg img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.smallrecord .recordnumber{
-    margin-bottom: 20px;
-}
-
-.smallrecord h2{
-    font-family: Georgia, Times, "Times New Roman", serif;
-    font-size: 2.3rem;
-    font-weight: 400;
-    margin-bottom: 15px;
-}
-
-.smallrecord > p:not(.recordnumber){
-    width: 80%;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    font-weight: 300;
-    margin-bottom: 30px;
-}
-
-.smallrecord a{
-    text-decoration: underline;
-    font-size: 1.1rem;
-}
-
-.smallrecord a:hover{
-    color: #968a32;
-}
-
-
-/* таблица архива */
-.archiveindex{
-    padding: 80px 40px 120px 40px;
-}
-
-.archiveindextitle{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 60px;
-}
-
-.archiveindextitle h2{
-    width: 60%;
-    font-size: 4rem;
-    font-weight: 300;
-}
-
-.archivetable{
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.archivetable th{
-    text-align: left;
-    font-size: 1rem;
-    font-weight: 500;
-    padding: 18px 10px;
-    border-top: 1px solid #111111;
-    border-bottom: 1px solid #111111;
-}
-
-.archivetable td{
-    font-size: 1.1rem;
-    font-weight: 300;
-    padding: 22px 10px;
-    border-bottom: 1px solid #999999;
-}
-
-.archivetable tr:hover{
-    background-color: #e7e2d2;
-}
-.headernav a.active {
+.asyncnavbar .nav-link.active{
     opacity: 1;
     font-weight: 600;
+    color: #111111;
+}
+.asyncnavbar-btn{
+    border: 1px solid #000000;
+    border-radius: 20px;
+    color: #000000;
+    font-weight: 400;
+}
+.asyncnavbar-btn:hover{
+    background-color: #000000;
+    color: #d0c24f;
+}
+.asyncnavbar .navbar-toggler{
+    border-color: rgba(0,0,0,0.35);
+}
+.asyncnavbar .navbar-toggler:focus{
+    box-shadow: 0 0 0 0.2rem rgba(0,0,0,0.2);
+}
+
+.researchrecords, .resources{
+    border-bottom: 1px solid #111111;
+}
+.researchtitle, .resourcetitle, .gallerytitle{
+    display: flex;
+    justify-content: center;
+}
+.researchtitle h2, .resourcetitle h2, .gallerytitle h2{
+    width: 100%;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 300;
+}
+
+/* Bootstrap cards theme (Task 8) */
+.recordcard-bs, .resourcecard-bs{
+    background-color: #f8f8f8;
+    border: 1px solid #b9b5a7;
+    border-radius: 0;
+    transition: 0.2s;
+}
+.recordcard-bs:hover, .resourcecard-bs:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+.recordcard-bs .card-img-top, .resourcecard-bs .card-img-top{
+    height: 210px;
+    object-fit: cover;
+    border-radius: 0;
+}
+.recordcard-bs .card-title, .resourcecard-bs .card-title{
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-weight: 400;
+}
+.recordnum, .resnum{
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Bootstrap grid sections replacing old CSS-grid areas (Task 3) */
+.archivegrid, .staffgrid{
+    border-bottom: 1px solid #111111;
+}
+.archivegridhead, .staffgridhead{
+    border-bottom: 1px solid #111111;
+}
+.archivegridhead h2, .staffgridhead h2{
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 300;
+}
+.archiveside h3, .staffside h3{
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+.archiveside p, .staffside p{
+    margin-bottom: 10px;
+    color: #555;
+}
+.archivegridfoot, .staffgridfoot{
+    border-top: 1px solid #111111;
+    font-size: 0.9rem;
+}
+.archive-access, .staff-actions{
+    border-left: none;
+}
+@media (min-width: 992px){
+    .archive-access, .staff-actions{
+        border-left: 1px solid #aaa596;
+    }
+}
+.archive-access h3, .staff-actions h3{
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+.archive-access p, .staff-actions p{
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Bootstrap table theme */
+.archivetable-bs{
+    --bs-table-border-color: #aaa596;
+}
+.archivetable-bs thead th{
+    border-bottom: 2px solid #111111 !important;
+    font-weight: 600;
+}
+.archivetable-bs tbody tr:hover{
+    --bs-table-accent-bg: #e7e2d2;
+}
+
+/* Field carousel theme (Task 7) */
+.fieldcarousel{
+    border: 1px solid #111111;
+}
+.fieldcarousel .carousel-item img{
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+}
+.fieldcarousel .carousel-caption{
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 6px;
+    left: 8%;
+    right: 8%;
+    bottom: 30px;
+    padding: 10px 16px;
+}
+.fieldcarousel .carousel-indicators [data-bs-target]{
+    background-color: #d0c24f;
+}
+.fieldcarousel .carousel-control-prev,
+.fieldcarousel .carousel-control-next{
+    width: 8%;
+}
+
+/* personnel notices */
+.notice{
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    border-top: 1px solid #aaa596;
+}
+.notice:last-child{
+    border-bottom: 1px solid #aaa596;
+}
+.notice h3{
+    font-size: 1.15rem;
+    font-weight: 300;
+}
+
+/* Bootstrap form theme (Task 9) */
+.request{
+    border-top: 1px solid #111111;
+}
+.request h2{
+    font-weight: 300;
+}
+.request-submit-btn{
+    border: 1px solid #111111;
+    background-color: #d0c24f;
+    color: #111111;
+}
+.request-submit-btn:hover{
+    background-color: #111111;
+    color: #d0c24f;
+}
+.form-control:focus, .form-select:focus{
+    border-color: #d0c24f;
+    box-shadow: 0 0 0 0.2rem rgba(208,194,79,0.35);
+}
+.form-check-input:checked{
+    background-color: #111111;
+    border-color: #111111;
+}
+.form-check-input:focus{
+    border-color: #d0c24f;
+    box-shadow: 0 0 0 0.2rem rgba(208,194,79,0.35);
+}
+
+#archiveindex, #request{
+    scroll-margin-top: 90px;
+}
+
+/* под маленький экран */
+@media (max-width: 1000px){
+    .header{
+        padding: 10px 35px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .headernav{
+        gap: 28px;
+        flex-wrap: wrap;
+    }
+
+    /* Task 1 — промежуточный (tablet) размер шрифта между desktop и mobile */
+    .researchmaintext h1, .personneltext h1{
+        font-size: 3.5rem;
+    }
+    .researchtitle h2, .resourcetitle h2, .gallerytitle h2,
+    .archivegridhead h2, .staffgridhead h2{
+        font-size: 3rem;
+    }
+
+    .fieldcarousel .carousel-item img{
+        height: 360px;
+    }
+}
+
+@media (max-width: 650px){
+    body{
+        padding-top: 120px;
+    }
+    body.bs-page{
+        padding-top: 0;
+    }
+    .header{
+        position: absolute;
+        padding: 10px 20px;
+    }
+    .headernav{
+        gap: 12px;
+        font-size: 0.85rem;
+    }
+    .researchmaintext, .personneltext{
+        width: 80vw;
+    }
+    /* Task 1 — самый маленький (mobile) размер шрифта */
+    .researchmaintext h1, .personneltext h1{
+        font-size: 3rem;
+    }
+    .researchtitle h2, .resourcetitle h2, .gallerytitle h2,
+    .archivegridhead h2, .staffgridhead h2{
+        font-size: 2.7rem;
+    }
+    .notice{
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+    .fieldcarousel .carousel-item img{
+        height: 260px;
+    }
+    .fieldcarousel .carousel-caption{
+        left: 4%;
+        right: 4%;
+        bottom: 15px;
+        padding: 6px 10px;
+    }
+    .fieldcarousel .carousel-caption h5{
+        font-size: 0.95rem;
+        margin-bottom: 0;
+    }
 }
