@@ -4,196 +4,250 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Complex</title>
-    <link rel="stylesheet" href="isa.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/isa.css">
 </head>
-<body class="complex-page">
+<body class="d-flex flex-column min-vh-100">
 
-   <header>
-        <div class="logo">
-            <a href="index.html"><img src="assets/asyncbiglogo.png" alt="Async Foundation Logo"></a>
-        </div>
-        <nav class="nav">
-            <a href="index.html">HOME</a>
-            <a href="tech.html">TECHNOLOGY</a>
-            <a href="complex.html" class="active">THE COMPLEX</a>
-            <a href="research">RESEARCH & ARCHIVE</a>
-            <a href="personnel.html">FOR PERSONNEL</a>
-            <a href="place_order.html" class="button nav-btn">PLACE ORDER</a>
+    <header class="header sticky-top">
+        <nav class="navbar navbar-expand-lg px-3 px-lg-5 py-2">
+            <a class="navbar-brand headerlogo m-0" href="index.html">
+                <img src="assets/asyncbiglogo.png" alt="A-Sync Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainnav" aria-controls="mainnav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainnav">
+                <div class="navbar-nav headernav mx-lg-auto gap-lg-4 gap-xl-5">
+                    <a class="nav-link" href="index.html">HOME</a>
+                    <a class="nav-link" href="tech.html">TECHNOLOGY</a>
+                    <a class="nav-link active" aria-current="page" href="complex.html">THE COMPLEX</a>
+                    <a class="nav-link" href="research.html">ARCHIVE</a>
+                    <a class="nav-link" href="personnel.html">FOR PERSONNEL</a>
+                </div>
+                <div class="headeraction my-2 my-lg-0">
+                    <a href="place_order.html" class="btn btn-outline-dark rounded-pill px-3">PLACE ORDER</a>
+                </div>
+            </div>
         </nav>
     </header>
 
-    <section class="main" id="top">
+    <section class="main hero-short">
         <div class="mainlogo">
-            <img src="assets/asyncbiglogo.png" alt="Async Logo">
+            <img src="assets/asyncbiglogo.png" alt="">
         </div>
-
-        <div class="maincontainer">
+        <div class="maincontainer px-4 px-md-5 py-5" id="top">
             <div class="maintext">
-                <h1>Results of LPMDS Technology</h1>
-                <p>What we've achieved with our latest innovations.</p>
+                <h1 class="mb-3">Results of LPMDS Technology</h1>
+                <p class="mb-0">What we've achieved with our latest innovations.</p>
             </div>
         </div>
     </section>
 
-    <div class="page-grid">
-        <aside class="sidebar">
-            <h3>Project Index</h3>
-            <ul>
-                <li><a href="#top">Overview</a></li>
-                <li><a href="#spatial-expansion">Spatial Expansion</a></li>
-                <li><a href="#infrastructure">Infrastructure</a></li>
-                <li><a href="#approaches">Approaches</a></li>
-                <li><a href="#archive" class="archive-link">Archive</a></li>
-            </ul>
-        </aside>
+    <section class="white">
+        <section class="allcontent container py-4 py-lg-5">
+            <div class="row g-4">
 
-        <div class="content-wrap">
-            <section class="white">
-                <section class="allcontent">
-                    <section class="aboutus" id="spatial-expansion">
-                        <img src="assets/statistic1.png" alt="Statistics Image" width="100" height="300">
-                        <div class="text">
-                            <h2>Infinite Spatial Expansion</h2>
-                            <p color="blue">By establishing stable Threshold access into Project KV31 (The
-                            Complex), ASYNC effectively eliminates global real estate
-                            constraints.</p>
+                <aside class="col-12 col-lg-3">
+                    <nav class="sidebar rounded p-3" aria-label="Project index">
+                        <h2 class="h5 mb-3">Project Index</h2>
+                        <ul class="nav flex-column">
+                            <li class="nav-item"><a class="nav-link px-2" href="#top">Overview</a></li>
+                            <li class="nav-item"><a class="nav-link px-2" href="#spatial-expansion">Spatial Expansion</a></li>
+                            <li class="nav-item"><a class="nav-link px-2" href="#infrastructure">Infrastructure</a></li>
+                            <li class="nav-item"><a class="nav-link px-2" href="#approaches">Approaches</a></li>
+                            <li class="nav-item"><a class="nav-link archive-link px-2" href="#archive">Archive</a></li>
+                        </ul>
+                    </nav>
+                </aside>
 
-                            <p>Earth's growing agricultural, industrial, and urban density problems
-                            can be instantly mitigated by transferring physical storage, logistics
-                            hubs, and heavy data centers into secondary spatial dimensions.</p>
+                <div class="col-12 col-lg-9">
 
-                            <p>
-                                Our research combines engineering, spatial science,
-                                and long-term field observation. Project KV31 is the
-                                institute's most ambitious program to date.
-                            </p>
+                    <section class="bg-white border rounded p-3 p-md-4 mb-4" id="spatial-expansion">
+                        <div class="row align-items-center g-4">
+                            <div class="col-12 col-md-10 col-lg-6 mx-auto">
+                                <img src="assets/statistic1.png" alt="Statistics chart of spatial expansion" class="img-fluid rounded">
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <h2 class="mb-3">Infinite Spatial Expansion</h2>
+                                <p>By establishing stable Threshold access into Project KV31 (The Complex), ASYNC effectively eliminates global real estate constraints.</p>
+                                <p>Earth's growing agricultural, industrial, and urban density problems can be instantly mitigated by transferring physical storage, logistics hubs, and heavy data centers into secondary spatial dimensions.</p>
+                                <p class="mb-0">Our research combines engineering, spatial science, and long-term field observation. Project KV31 is the institute's most ambitious program to date.</p>
+                            </div>
                         </div>
                     </section>
 
-                    <section class="perehody" id="infrastructure">
-                        <div class="tech">
-                            <div class="container">
-                                <img src="assets/statistic 2.png" alt="Statistics Image">
+                    <section class="bg-white border rounded p-3 p-md-4 mb-4" id="infrastructure">
+                        <div class="row align-items-center g-4 mb-4 pb-4 border-bottom">
+                            <div class="col-12 col-md-6">
+                                <img src="assets/statistic2.png" alt="Real estate cost comparison chart" class="img-fluid rounded">
                             </div>
-                            <div class="text">
-                                <h2>Real Estate Cost Comparison</h2>
-                                <p>Project KV31 delivers a 96.2% operational cost reduction per square meter compared to prime metropolitan real estate on Earth, disrupting</p>
-                                <p>traditional commercial property markets worldwide.</p>
+                            <div class="col-12 col-md-6">
+                                <h2 class="mb-3">Real Estate Cost Comparison</h2>
+                                <p class="mb-0">Project KV31 delivers a 96.2% operational cost reduction per square meter compared to prime metropolitan real estate on Earth, disrupting traditional commercial property markets worldwide.</p>
                             </div>
                         </div>
+                        <div class="row align-items-center g-4 flex-md-row-reverse">
+                            <div class="col-12 col-md-6">
+                                <img src="assets/statistic3.png" alt="Revenue stream distribution chart" class="img-fluid rounded">
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <h2 class="mb-3">Popular Users</h2>
+                                <p>Diversified commercial leasing structures guarantee recurring subscription revenues from sovereign entities and top-tier global logistics corporations.</p>
+                                <a href="#" class="btn btn-sm btn-outline-dark">Show more</a>
+                            </div>
+                        </div>
+                    </section>
 
-                        <div class="complex">
-                            <div class="text">
-                                <p>Revenue Stream Distribution</p>
-                                <div class="inside">
-                                    <h1>Popular Users</h1>
-                                    <p>Diversified commercial leasing structures guarantee recurring subscription revenues from sovereign entities and top-tier global logistics corporations.</p>
+                    <section class="bg-white border rounded p-3 p-md-4 mb-4" id="approaches">
+                        <h2 class="mb-4">Our Next Approaches</h2>
+                        <div class="card-group">
+                            <article class="card">
+                                <img src="assets/poolroom.png" class="card-img-top card-img-ratio" alt="Pool Room level">
+                                <div class="card-body">
+                                    <h3 class="card-title h5">Sub-Level 37: Hydro-Spatial Architecture ("Poolrooms")</h3>
+                                    <p class="card-text">Our upcoming primary objective focuses on stabilizing vast, interconnected aquatic structures characterized by ambient light, non-Euclidean tiling, and static atmospheric pressure.</p>
                                 </div>
-                                <a href="">show more</a>
+                            </article>
+                            <article class="card">
+                                <img src="assets/fields.png" class="card-img-top card-img-ratio" alt="The Fields level">
+                                <div class="card-body">
+                                    <h3 class="card-title h5">Sub-Level 10: Biomorphic Cultivation ("The Fields")</h3>
+                                    <p class="card-text">Initiating exploratory soil analysis and atmospheric sampling within boundless agricultural expanses under artificial daylight cycles.</p>
+                                </div>
+                            </article>
+                            <article class="card">
+                                <img src="assets/94.png" class="card-img-top card-img-ratio" alt="Neighborhood Void level">
+                                <div class="card-body">
+                                    <h3 class="card-title h5">Sub-Level 94: Subterranean Residential ("Neighborhood Void")</h3>
+                                    <p class="card-text">Surveying artificial suburban layouts suspended in low-light environments and mapping non-linear roadways before establishing observation towers.</p>
+                                </div>
+                            </article>
+                        </div>
+
+                        <h3 class="h4 mt-3 mt-lg-4 mb-3">Status updates</h3>
+                        <div class="row g-3">
+                            <div class="col-12 col-sm-6 col-lg-4">
+                                <a href="#" class="d-block h-100 p-3 border rounded text-decoration-none text-body bg-light">
+                                    <span class="fw-bold d-block mb-1">Sub-Level 23: Magnetic Anomaly Research ("The Core")</span>
+                                    Routine maintenance for containment units.
+                                </a>
                             </div>
-                            <div class="container">
-                                <img src="assets/statistic3.png" alt="Statistics Image">
+                            <div class="col-12 col-sm-6 col-lg-4">
+                                <a href="#" class="d-block h-100 p-3 border rounded text-decoration-none text-body bg-light">
+                                    <span class="fw-bold d-block mb-1">Sub-Level 402: Archival Research ("The Vault")</span>
+                                    Retrieved audio from the 1994 expedition.
+                                </a>
+                            </div>
+                            <div class="col-12 col-sm-12 col-lg-4">
+                                <a href="#" class="d-block h-100 p-3 border rounded text-decoration-none text-body bg-light">
+                                    <span class="fw-bold d-block mb-1">Sub-Level 100: Security Clearance ("The Bunker")</span>
+                                    Mandatory biometric credential updates.
+                                </a>
+                            </div>
+                        </div>
+                        <p class="mt-3 mb-0"><span class="fw-bold">Patch v2.4.3 release:</span> fixing minor bugs and issues.</p>
+                    </section>
+
+                    <section class="bg-white border rounded overflow-hidden" id="archive">
+                        <h2 class="archive-heading text-center py-5 px-3 mb-4">Archival research materials</h2>
+                        <div class="row justify-content-center px-3 pb-4">
+                            <div class="col-12 col-xl-10">
+                                <div id="archiveCarousel" class="carousel slide" data-bs-ride="false" aria-label="Archival research images">
+                                    <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#archiveCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#archiveCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#archiveCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                <button type="button" data-bs-target="#archiveCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                <button type="button" data-bs-target="#archiveCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                                <button type="button" data-bs-target="#archiveCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                                <button type="button" data-bs-target="#archiveCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                                <button type="button" data-bs-target="#archiveCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
+                                <button type="button" data-bs-target="#archiveCarousel" data-bs-slide-to="8" aria-label="Slide 9"></button>
+                                    </div>
+                                    <div class="carousel-inner rounded">
+                                <div class="carousel-item active">
+                                    <div class="ratio ratio-16x9">
+                                        <img src="assets/monster.png" class="object-fit-cover" alt="Monster image">
+                                    </div>
+                                    <div class="carousel-caption d-none d-md-block"><p class="mb-0 text-white">Monster</p></div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="ratio ratio-16x9">
+                                        <img src="assets/wall.png" class="object-fit-cover" alt="Weird wall image">
+                                    </div>
+                                    <div class="carousel-caption d-none d-md-block"><p class="mb-0 text-white">Weird wall</p></div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="ratio ratio-16x9">
+                                        <img src="assets/tv.png.png" class="object-fit-cover" alt="TV image">
+                                    </div>
+                                    <div class="carousel-caption d-none d-md-block"><p class="mb-0 text-white">TV</p></div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="ratio ratio-16x9">
+                                        <img src="assets/investigation.png.png" class="object-fit-cover" alt="Investigation image">
+                                    </div>
+                                    <div class="carousel-caption d-none d-md-block"><p class="mb-0 text-white">Investigation</p></div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="ratio ratio-16x9">
+                                        <img src="assets/deadman.png.png" class="object-fit-cover" alt="Dead man image">
+                                    </div>
+                                    <div class="carousel-caption d-none d-md-block"><p class="mb-0 text-white">Dead man</p></div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="ratio ratio-16x9">
+                                        <img src="assets/missing.png.png" class="object-fit-cover" alt="Missing person image">
+                                    </div>
+                                    <div class="carousel-caption d-none d-md-block"><p class="mb-0 text-white">Missing person</p></div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="ratio ratio-16x9">
+                                        <img src="assets/kidney.png.png" class="object-fit-cover" alt="Kidney image">
+                                    </div>
+                                    <div class="carousel-caption d-none d-md-block"><p class="mb-0 text-white">Kidney</p></div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="ratio ratio-16x9">
+                                        <img src="assets/the_cave.png.png" class="object-fit-cover" alt="Cave image">
+                                    </div>
+                                    <div class="carousel-caption d-none d-md-block"><p class="mb-0 text-white">Cave</p></div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="ratio ratio-16x9">
+                                        <img src="assets/leftovers.png.png" class="object-fit-cover" alt="Leftovers image">
+                                    </div>
+                                    <div class="carousel-caption d-none d-md-block"><p class="mb-0 text-white">Leftovers</p></div>
+                                </div>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#archiveCarousel" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#archiveCarousel" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </section>
 
-                    <section class="newsgallery" id="approaches">
-                        <h2>Our Next Approaches</h2>
-                        <div class="newsgrid">
-                            <div class="newscol largecol">
-                                <article class="postcard bigpost">
-                                    <div class="postimg">
-                                        <img src="assets/poolroom.png" alt="Pool Room Image">
-                                    </div>
-                                    <a href="#" class="posttitle">Sub-Level 37: Hydro-Spatial Architecture ("Poolrooms")</a>
-                                    <p class="postdesc">Our upcoming primary objective focuses on stabilizing vast, interconnected aquatic structures characterized by ambient light, non-Euclidean tiling, and static atmospheric pressure. Initial sensor sweeps indicate zero hostile entities, making it an ideal candidate for long-term spatial containment and resource harvesting.</p>
-                                </article>
-                            </div>
-
-                            <div class="newscol mediumcol">
-                                <article class="postcard medpost">
-                                    <div class="postimgsmall">
-                                        <img src="assets/fields.png" alt="Fields level image">
-                                    </div>
-                                    <a href="#" class="posttitle">Sub-Level 10: Biomorphic Cultivation ("The Fields")</a>
-                                    <p class="postdesc">Initiating exploratory soil analysis and atmospheric sampling within boundless agricultural expanses. Target focus: evaluating long-term crop sustainability and non-terrestrial atmospheric stability under artificial daylight cycles.</p>
-                                </article>
-                                <article class="postcard medpost">
-                                    <div class="postimgsmall">
-                                        <img src="assets/94.png" alt="94 level image">
-                                    </div>
-                                    <a href="#" class="posttitle">Sub-Level 94: Subterranean Residential ("Neighborhood Void")</a>
-                                    <p class="postdesc">Surveying artificial suburban layouts suspended in low-light environments. Primary research involves mapping non-linear roadways and identifying localized cognitive influence triggers before establishing permanent observation towers.</p>
-                                </article>
-                            </div>
-
-                            <div class="newscol smallcol">
-                                <article class="postcard textonly">
-                                    <a href="#" class="posttitle">Sub-Level 23: Magnetic Anomaly Research ("The Core")</a>
-                                    <p class="postdesc">Routine maintenance for containment units.</p>
-                                </article>
-                                <article class="postcard textonly">
-                                    <a href="#" class="posttitle">Sub-Level 402: Archival Research ("The Vault")</a>
-                                    <p class="postdesc">Retrieved audio from the 1994 expedition.</p>
-                                </article>
-                                <article class="postcard textonly">
-                                    <a href="#" class="posttitle">Sub-Level 100: Security Clearance ("The Bunker")</a>
-                                    <p class="postdesc">Mandatory biometric credential updates.</p>
-                                </article>
-                                <article class="postcard textonly">
-                                    <a href="#" class="posttitle">Patch v2.4.3 release</a>
-                                    <p class="postdesc">Fixing minor bugs and issues.</p>
-                                </article>
-                            </div>
-                        </div>
-                    </section>
-                </section>
-            </section>
-
-            <section class="archive-gallery" id="archive">
-                <h2>Archival research materials</h2>
-
-                <div class="archive-grid">
-                    <figure class="archive-item tall">
-                        <img src="assets/monster.png" alt="Monster image">
-                    </figure>
-                    <figure class="archive-item wide">
-                        <img src="assets/wall.png" alt="Weird wall image">
-                    </figure>
-                    <figure class="archive-item">
-                        <img src="assets/tv.png.png" alt="TV image">
-                    </figure>
-                    <figure class="archive-item">
-                        <img src="assets/investigation.png.png" alt="Investigation image">
-                    </figure>
-                    <figure class="archive-item">
-                        <img src="assets/deadman.png.png" alt="Dead man image">
-                    </figure>
-                    <figure class="archive-item wide">
-                        <img src="assets/missing.png.png" alt="Missing person image">
-                    </figure>
-                    <figure class="archive-item">
-                        <img src="assets/kidney.png.png" alt="Kidney image">
-                    </figure>
-                    <figure class="archive-item tall">
-                        <img src="assets/the_cave.png.png" alt="Caveimage">
-                    </figure>
-                    <figure class="archive-item">
-                        <img src="assets/leftovers.png.png" alt="Leftovers image">
-                    </figure>
                 </div>
-            </section>
-        </div>
-    </div>
+            </div>
+        </section>
+    </section>
 
-    <footer class="footer">
-        <div class="footerleft">
-            <p>Kamash Abilmansur</p>
-            <p>Daniyar Ukin</p>
-            <p>Islam Nurmukhammet</p>
+    <footer class="footer mt-auto d-flex flex-column flex-md-row justify-content-around align-items-center gap-3 p-4 text-center">
+        <div class="footerleft text-md-start">
+            <p class="mb-0">Kamash Abilmansur</p>
+            <p class="mb-0">Daniyar Ukin</p>
+            <p class="mb-0">Islam Nurmukhammet</p>
         </div>
-        <p>&copy; 2017 A-SYNC by Kane Pixels. All rights reserved.</p>
+        <p class="mb-0">&copy; 2017 A-SYNC by Kane Pixels. All rights reserved.</p>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
