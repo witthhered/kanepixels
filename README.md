@@ -57,7 +57,8 @@ Desktop  1200px and up
 HOW TO RUN
 ----------
 1. Go to https://witthhered.github.io/kanepixels/
-3. Use the navigation bar to move between pages.
+2. Use the navigation bar to move between pages.
+3. To swap media page click on it again in navigation bar
 
 
 TEAM
