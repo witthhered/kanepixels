@@ -1,44 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --bs-body-font-family: "IBM Plex Sans Condensed", sans-serif;
-    --bs-body-color: #333333;
     --fs-hero: 2.25rem;
+    --fs-h1: 2rem;
     --fs-h2: 1.75rem;
     --fs-h3: 1.5rem;
+    --fs-h4: 1.1rem;
     --fs-p: 1rem;
+    --yellow: #d0c24f;
+    --cream: #f3f0e6;
+    --line: 1px solid #111111;
 }
 
-@media (min-width: 768px) {
-    :root {
-        --fs-hero: 3.25rem;
-        --fs-h2: 2.25rem;
-        --fs-h3: 1.9rem;
-        --fs-p: 1.1rem;
-    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "IBM Plex Sans Condensed", sans-serif;
 }
 
-@media (min-width: 1200px) {
-    :root {
-        --fs-hero: 4.5rem;
-        --fs-h2: 3rem;
-        --fs-h3: 2.5rem;
-        --fs-p: 1.2rem;
-    }
+body {
+    color: #000;
+    padding-top: 60px;
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
 [id] {
     scroll-margin-top: 80px;
 }
 
-h2 {
-    font-size: var(--fs-h3);
+.white {
+    background-color: var(--cream);
+    border-bottom: var(--line);
 }
 
 .header {
-    background-color: #d0c24f;
-    color: #000000;
-    border-bottom: 1px solid #111111;
+    background-color: var(--yellow);
+    border-bottom: var(--line);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
 }
 
 .headerlogo img {
@@ -47,25 +55,31 @@ h2 {
 }
 
 .headernav .nav-link {
-    color: #000000;
+    color: #000;
     opacity: 0.8;
+    font-size: 1.2rem;
+    font-weight: 500;
 }
 
 .headernav .nav-link:hover,
 .headernav .nav-link:focus {
-    color: #000000;
+    color: #000;
     opacity: 1;
     text-decoration: underline;
 }
 
 .headernav .nav-link.active {
-    color: #000000;
+    color: #000;
     opacity: 1;
-    font-weight: 600;
+    font-weight: 700;
+}
+
+.headeraction .btn {
+    font-weight: 500;
 }
 
 .navbar-toggler {
-    border-color: #000000;
+    border-color: #000;
 }
 
 .btn {
@@ -73,41 +87,41 @@ h2 {
 }
 
 .btn-primary {
-    --bs-btn-color: #f3f0e6;
+    --bs-btn-color: var(--cream);
     --bs-btn-bg: #111111;
     --bs-btn-border-color: #111111;
-    --bs-btn-hover-color: #000000;
-    --bs-btn-hover-bg: #d0c24f;
+    --bs-btn-hover-color: #000;
+    --bs-btn-hover-bg: var(--yellow);
     --bs-btn-hover-border-color: #111111;
-    --bs-btn-active-color: #000000;
-    --bs-btn-active-bg: #d0c24f;
+    --bs-btn-active-color: #000;
+    --bs-btn-active-bg: var(--yellow);
     --bs-btn-active-border-color: #111111;
 }
 
 .btn-secondary {
-    --bs-btn-color: #000000;
-    --bs-btn-bg: #d0c24f;
+    --bs-btn-color: #000;
+    --bs-btn-bg: var(--yellow);
     --bs-btn-border-color: #111111;
-    --bs-btn-hover-color: #f3f0e6;
+    --bs-btn-hover-color: var(--cream);
     --bs-btn-hover-bg: #111111;
     --bs-btn-hover-border-color: #111111;
-    --bs-btn-active-color: #f3f0e6;
+    --bs-btn-active-color: var(--cream);
     --bs-btn-active-bg: #111111;
     --bs-btn-active-border-color: #111111;
 }
 
 .btn-outline-dark {
-    --bs-btn-hover-color: #d0c24f;
+    --bs-btn-hover-color: var(--yellow);
 }
 
 .main {
-    background-color: #d0c24f;
-    color: #111111;
+    background-color: var(--yellow);
+    min-height: calc(100vh - 60px);
     position: relative;
     overflow: hidden;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #111111;
+    border-bottom: var(--line);
 }
 
 .hero-short {
@@ -121,13 +135,6 @@ h2 {
     transform: translateY(-50%);
     width: 120vw;
     opacity: 0.25;
-}
-
-@media (min-width: 768px) {
-    .mainlogo img {
-        width: 65vw;
-        opacity: 0.5;
-    }
 }
 
 .maincontainer {
@@ -145,23 +152,44 @@ h2 {
     font-size: var(--fs-hero);
     line-height: 1.1;
     font-weight: 600;
-    color: #111111;
 }
 
 .maintext p {
     font-size: var(--fs-p);
-    color: #000000;
+    font-weight: 600;
+    opacity: 0.8;
 }
 
-.white {
-    background-color: #f3f0e6;
-    border-bottom: 1px solid #111111;
+h2 {
+    font-size: var(--fs-h3);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.textblock p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #333;
+}
+
+.card-title {
+    font-size: var(--fs-h4);
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.card-text {
+    line-height: 1.5;
 }
 
 .footer {
-    background-color: #d0c24f;
-    color: #111111;
-    font-size: 0.9rem;
+    background-color: var(--yellow);
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: 500;
+    position: sticky;
+    z-index: -5;
+    bottom: 0;
 }
 
 .sidebar {
@@ -183,13 +211,6 @@ h2 {
     text-decoration: line-through;
 }
 
-@media (min-width: 992px) {
-    .sidebar {
-        position: sticky;
-        top: 80px;
-    }
-}
-
 .card-img-ratio {
     aspect-ratio: 16 / 10;
     object-fit: cover;
@@ -206,11 +227,17 @@ h2 {
 .carousel-caption {
     background-color: rgba(0, 0, 0, 0.75);
     border-radius: 6px;
+    bottom: 1.5rem;
 }
 
 .order-band {
     background-color: #111111;
     color: #f3f0e6;
+}
+
+.order-band .intro p {
+    font-size: var(--fs-p);
+    line-height: 1.7;
 }
 
 .order-form {
@@ -229,6 +256,10 @@ h2 {
 .order-form .form-check-input:checked {
     background-color: #111111;
     border-color: #111111;
+}
+
+.order-form .form-control::placeholder {
+    color: #595959;
 }
 
 .order-form .form-text {
@@ -260,4 +291,38 @@ h2 {
 .btn-check:focus-visible + .facility-card {
     outline: 3px solid #0d6efd;
     outline-offset: 2px;
+}
+
+@media (min-width: 768px) {
+    :root {
+        --fs-hero: 3.25rem;
+        --fs-h1: 3rem;
+        --fs-h2: 2.25rem;
+        --fs-h3: 1.9rem;
+        --fs-h4: 1.2rem;
+        --fs-p: 1.1rem;
+    }
+
+    .mainlogo img {
+        width: 65vw;
+        opacity: 0.5;
+    }
+}
+
+@media (min-width: 992px) {
+    .sidebar {
+        position: sticky;
+        top: 80px;
+    }
+}
+
+@media (min-width: 1200px) {
+    :root {
+        --fs-hero: 4.5rem;
+        --fs-h1: 4rem;
+        --fs-h2: 3rem;
+        --fs-h3: 2.5rem;
+        --fs-h4: 1.3rem;
+        --fs-p: 1.5rem;
+    }
 }

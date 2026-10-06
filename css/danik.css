@@ -1,610 +1,97 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "IBM Plex Sans Condensed", sans-serif;
-    /* дефолт шрифт отсюда брать */
-}
-
-body {
-    color: #333;
-    padding-top: 60px;
-    display: grid;
-    grid-template-rows: 1fr auto;
-    /* для футера грид не трогать */
-}
-/* research.html / personnel.html используют Bootstrap navbar (sticky, а не fixed),
-   поэтому им не нужен запасной отступ под старый .header */
-body.bs-page{
-    padding-top: 0;
-}
-.white{
-    width: 100%;
-    background-color: #f3f0e6;
-    border-bottom: 1px solid #111111;
-
-}
-.allcontent{
-    width: 80%;
-    margin: 0 auto;
-}
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-/* header */
-.header {
-    background-color: #d0c24f; 
-    color: #000000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 120px;
-    border-bottom: 1px solid #111111;
-    position: fixed; 
-    width: 100%;
-    top: 0;
-    z-index: 100;
-}
-
-.headerlogo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: bold;
-    font-size: 1rem;
-    width: 11vw;
-}
-.headerlogo img{
-    width: 9vh;
-}
-
-.headernav {
-    display: flex;
-    gap: 90px;
-    font-size: 1rem;
-}
-
-.headernav a {
-    /* color: #ffffff; */
-    opacity: 0.8;
-}
-.headernav a:hover {
-    color: #ffffff;
-}
-
-.btnbuy {
-    background-color: transparent; 
-    /* color: #ffffff; */
-    border: 1px solid #000000;
-    padding: 8px 16px;
-    border-radius: 20px; 
-    font-weight: 400;
-    font-size: 1.3rem;
-}
-.btnbuy:hover {
-    background-color: #000000;
-    color: #d0c24f;
-}
-
-.main {
-    background-color: #d0c24f; 
-    color: #f3f0e6;
-    height: calc(100vh - 60px); 
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    border-bottom: 1px solid #111111;
-}
-
-
-
-
-.mainlogo img{
-    position: absolute;
-    right: -10%;
-    transform: translateY(-50%);
-    width: 65vw; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    letter-spacing: 5px;
-    opacity: 0.5;
-}
-
-.maincontainer {
-    width: 100%;
-    max-width: 90vw;
-    margin: auto 0 15vh 4vw;
-    padding: 0 40px;
-    position: relative;
-    z-index: 2;
-}
-
-.maintext {
-    width: 43vw;
-}
-
-.main h1 {
-    font-family: Georgia, Times, "Times New Roman", serif; 
-    font-size: 4.5rem;
-    line-height: 1.1;
-    margin-bottom: 20px;
-    font-weight: 600;
-}
-
-.main p {
-    font-size: 1.2rem;
-    opacity: 0.8;
-    margin-top: 20px;
-    color: #000000;
-}
-
-.newsgallery {
-    background-color: #f3f0e6; 
-    color: #000000;
-    padding: 80px 40px;
-    /* border-bottom: 1px solid #111111; */
-}
-
-.newsgallery a:hover {
-    text-decoration: underline;
-}
-
-.newsgallery h2,
-.aboutus h2 {
-    margin-bottom: 40px;
-    font-size: 2rem;
-    font-weight: 700;
-    
-}
-
-.newsgrid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 40px;
-}
-
-.postcard {
-    background: #f8f8f8; 
-    padding: 20px;
-    border-radius: 8px;
-    height: 100%;
-}
-
-.posttitle {
-    font-weight: 700;
-    font-size: 1.2rem;
-    display: block;
-    margin-bottom: 10px;
-    line-height: 1.3;
-}
-
-.postdesc {
-    font-size: 1rem;
-    color: #444;
-    line-height: 1.5;
-}
-
-.postimg {
-    width: 100%;
-    height: 350px;
-    background-color: #ddd;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    overflow: hidden;
-
-}
-.postimg img{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
-.postimgsmall {
-    width: 100%;
-    height: 120px;
-    background-color: #ddd;
-    border-radius: 4px;
-    margin-bottom: 12px;
-    overflow: hidden;
-}
-.postimgsmall img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.mediumcol {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.smallcol {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.smallcol .postcard {
-    padding: 15px;
-}
-
-.aboutus {
-    background-color: #f3f0e6;
-    color: #000000;
-    padding: 60px 40px 100px 40px;
-    /* border-top: 1px solid #eee; */
-    border-bottom: 1px solid #111111;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    
-
-}
-
-.aboutus .text {
-    width: 60%;
-    
-}
-.aboutus .text h2{
-    /* text-align: right; */
-    font-size: 4rem;
-    font-weight: 300;  
-}
-
-
-.aboutus .text p {
-    
-    line-height: 1.7;
-    font-size: 1.2rem;
-    color: #333;
-    font-weight: 300;
-}
-.perehody{
-    width: 100%;
-    height: 100%;
-    padding: 80px 40px;
-}
-.perehody h1{
-    font-size: 3rem;
-}
-.perehody p{
-    font-size: 1.2rem;
-}
-.perehody a{
-    font-size: 1.1rem;
-    text-decoration: underline;
-}
-.tech, .complex{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    border-bottom: 1px solid #111111;
-    padding: 70px 0;
-}
-.tech .container, .complex .container{
-    width: 50%;
-    height: 38vh;
-    overflow: hidden;
-    
-}
-.container img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.perehody .text{
-
-    height: 24vh;
-    width: 35%;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-}
-.archive{
-    padding: 70px 0;
-    width: 100%;
-    display: flex;
-    align-items: center;
-}
-.archive .text{
-    margin: 0 auto;
-}
-
-.footer {
-    background-color: #d0c24f;
-    color: #ffffff;
-    position: sticky;
-    z-index: -5;
-    text-align: center;
-    padding: 30px;
-    font-size: 0.9rem;
-    bottom: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    
-}
-.footerleft{
-    text-align: left;
-}
-/* assignment 2 - наши две страницы */
-.headernav a.active{
-    opacity: 1;
-    font-weight: 600;
-}
-
-/* research */
-.researchmain, .personnelmain{
-    width: 100%;
-    height: 70vh;
-    background-color: #d0c24f;
-    color: #f3f0e6;
-    position: relative;
-    overflow: hidden;
-    border-bottom: 1px solid #111111;
-}
-.researchlogo img, .personnellogo img{
-    position: absolute;
-    right: -10%;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 65vw;
-    opacity: 0.4;
-}
-.researchmaintext, .personneltext{
-    position: absolute;
-    left: 7%;
-    bottom: 12%;
-    width: 45vw;
-    z-index: 2;
-}
-.researchmaintext h1, .personneltext h1{
-    font-family: Georgia, Times, "Times New Roman", serif;
-    font-size: 4.5rem;
-    line-height: 1.1;
-    font-weight: 600;
-    margin: 15px 0 25px 0;
-}
-.researchmaintext p, .personneltext p{
-    font-size: 1.2rem;
-    color: #111111;
-    width: 75%;
-}
-
-/* ===================================================================
-   Assignment 3 — Bootstrap integration (research.html / personnel.html)
-   Спейсинг (margin/padding) для секций ниже теперь задаётся утилити-
-   классами Bootstrap прямо в HTML (py-, px-, mt-lg-4, px-sm-2 и т.д.),
-   поэтому здесь остаются только цвета/границы/шрифты, которые
-   Bootstrap сам не покрывает.
-   =================================================================== */
-
-/* css/bootstrap.min.css — это сборка Bootswatch "Cerulean" поверх
-   Bootstrap 5.3.2 (обычный bootstrap.min.css с CDN не открывался в
-   нашей сети). У неё перекрашены акцентные CSS-переменные (например,
-   заголовки становятся синими). Возвращаем переменные к дефолтным
-   значениям чистого Bootstrap, чтобы тема сайта осталась жёлто-чёрной
-   A-Sync, а не голубой Cerulean. */
-:root{
-    --bs-primary: #0d6efd;
-    --bs-primary-rgb: 13,110,253;
-    --bs-secondary: #6c757d;
-    --bs-secondary-rgb: 108,117,125;
-    --bs-success: #198754;
-    --bs-info: #0dcaf0;
-    --bs-warning: #ffc107;
-    --bs-danger: #dc3545;
-    --bs-light: #f8f9fa;
-    --bs-dark: #212529;
-    --bs-body-color: #212529;
-    --bs-emphasis-color: #000000;
-    --bs-heading-color: inherit;
-    --bs-link-color: #111111;
-    --bs-link-hover-color: #000000;
-}
-
-/* Bootstrap navbar theme (Task 5) */
-.asyncnavbar{
-    background-color: #d0c24f;
-    border-bottom: 1px solid #111111;
-}
-.asyncnavbar .navbar-brand img{
-    width: 9vh;
-    min-width: 48px;
-}
-.asyncnavbar .nav-link{
-    color: #000000;
-    opacity: 0.8;
-    font-weight: 400;
-}
-.asyncnavbar .nav-link:hover,
-.asyncnavbar .nav-link:focus{
-    color: #ffffff;
-    opacity: 1;
-}
-.asyncnavbar .nav-link.active{
-    opacity: 1;
-    font-weight: 600;
-    color: #111111;
-}
-.asyncnavbar-btn{
-    border: 1px solid #000000;
-    border-radius: 20px;
-    color: #000000;
-    font-weight: 400;
-}
-.asyncnavbar-btn:hover{
-    background-color: #000000;
-    color: #d0c24f;
-}
-.asyncnavbar .navbar-toggler{
-    border-color: rgba(0,0,0,0.35);
-}
-.asyncnavbar .navbar-toggler:focus{
-    box-shadow: 0 0 0 0.2rem rgba(0,0,0,0.2);
-}
-
-.researchrecords, .resources{
-    border-bottom: 1px solid #111111;
-}
-.researchtitle, .resourcetitle, .gallerytitle{
-    display: flex;
-    justify-content: center;
-}
-.researchtitle h2, .resourcetitle h2, .gallerytitle h2{
-    width: 100%;
-    text-align: center;
-    font-size: 4rem;
-    font-weight: 300;
-}
-
-/* Bootstrap cards theme (Task 8) */
-.recordcard-bs, .resourcecard-bs{
+.recordcard-bs,
+.resourcecard-bs{
     background-color: #f8f8f8;
-    border: 1px solid #b9b5a7;
-    border-radius: 0;
-    transition: 0.2s;
+    border: 1px solid #e0dccc;
+    border-radius: 6px;
 }
-.recordcard-bs:hover, .resourcecard-bs:hover{
-    transform: translateY(-6px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-}
-.recordcard-bs .card-img-top, .resourcecard-bs .card-img-top{
-    height: 210px;
+.recordcard-bs .card-img-top,
+.resourcecard-bs .card-img-top{
+    height: 200px;
     object-fit: cover;
-    border-radius: 0;
+    border-radius: 6px 6px 0 0;
 }
-.recordcard-bs .card-title, .resourcecard-bs .card-title{
+.recordcard-bs .card-title,
+.resourcecard-bs .card-title{
     font-family: Georgia, Times, "Times New Roman", serif;
     font-weight: 400;
 }
-.recordnum, .resnum{
-    font-size: 0.9rem;
-    color: #555;
+.recordnum,
+.resnum{
+    font-size: 0.8rem;
+    font-weight: 700;
+    opacity: 0.5;
+    letter-spacing: 2px;
+    display: block;
 }
 
-/* Bootstrap grid sections replacing old CSS-grid areas (Task 3) */
-.archivegrid, .staffgrid{
-    border-bottom: 1px solid #111111;
+.researchrecords,
+.resources,
+.archivegrid,
+.staffgrid{
+    border-bottom: var(--line);
 }
-.archivegridhead, .staffgridhead{
-    border-bottom: 1px solid #111111;
-}
-.archivegridhead h2, .staffgridhead h2{
-    text-align: center;
-    font-size: 3.5rem;
-    font-weight: 300;
-}
-.archiveside h3, .staffside h3{
-    margin-bottom: 20px;
-    font-size: 1.3rem;
-}
-.archiveside p, .staffside p{
-    margin-bottom: 10px;
-    color: #555;
-}
-.archivegridfoot, .staffgridfoot{
-    border-top: 1px solid #111111;
-    font-size: 0.9rem;
-}
-.archive-access, .staff-actions{
-    border-left: none;
-}
-@media (min-width: 992px){
-    .archive-access, .staff-actions{
-        border-left: 1px solid #aaa596;
-    }
-}
-.archive-access h3, .staff-actions h3{
+
+.archiveside h3,
+.staffside h3,
+.archive-access h3,
+.staff-actions h3{
+    font-size: var(--fs-h4);
+    font-weight: 700;
     margin-bottom: 15px;
-    font-size: 1.3rem;
 }
-.archive-access p, .staff-actions p{
+.archiveside p,
+.staffside p,
+.archive-access p,
+.staff-actions p{
     color: #555;
-    margin-bottom: 20px;
+    line-height: 1.5;
+    margin-bottom: 10px;
 }
 
-/* Bootstrap table theme */
 .archivetable-bs{
-    --bs-table-border-color: #aaa596;
+    --bs-table-border-color: #e0dccc;
 }
 .archivetable-bs thead th{
     border-bottom: 2px solid #111111 !important;
-    font-weight: 600;
+    font-weight: 700;
 }
 .archivetable-bs tbody tr:hover{
-    --bs-table-accent-bg: #e7e2d2;
+    --bs-table-accent-bg: var(--cream);
 }
 
-/* Field carousel theme (Task 7) */
-.fieldcarousel{
-    border: 1px solid #111111;
-}
-.fieldcarousel .carousel-item img{
-    width: 100%;
-    height: 480px;
-    object-fit: cover;
-}
-.fieldcarousel .carousel-caption{
-    background-color: rgba(0,0,0,0.6);
-    border-radius: 6px;
-    left: 8%;
-    right: 8%;
-    bottom: 30px;
-    padding: 10px 16px;
-}
-.fieldcarousel .carousel-indicators [data-bs-target]{
-    background-color: #d0c24f;
-}
-.fieldcarousel .carousel-control-prev,
-.fieldcarousel .carousel-control-next{
-    width: 8%;
+.archivegridfoot,
+.staffgridfoot{
+    border-top: var(--line);
+    font-size: 0.9rem;
+    color: #555;
 }
 
-/* personnel notices */
 .notice{
-    display: grid;
-    grid-template-columns: 180px 1fr;
-    border-top: 1px solid #aaa596;
+    background: #f8f8f8;
+    border-radius: 6px;
+    border-left: 3px solid var(--yellow);
 }
-.notice:last-child{
-    border-bottom: 1px solid #aaa596;
+.notice p{
+    font-weight: 700;
+    font-size: 0.9rem;
+    background: #e8e4d5;
+    padding: 5px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
 }
 .notice h3{
-    font-size: 1.15rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.request h2{
+    font-size: var(--fs-h2);
     font-weight: 300;
 }
 
-/* Bootstrap form theme (Task 9) */
-.request{
-    border-top: 1px solid #111111;
-}
-.request h2{
-    font-weight: 300;
-}
-.request-submit-btn{
-    border: 1px solid #111111;
-    background-color: #d0c24f;
-    color: #111111;
-}
-.request-submit-btn:hover{
-    background-color: #111111;
-    color: #d0c24f;
-}
-.form-control:focus, .form-select:focus{
-    border-color: #d0c24f;
+.form-control:focus,
+.form-select:focus{
+    border-color: var(--yellow);
     box-shadow: 0 0 0 0.2rem rgba(208,194,79,0.35);
 }
 .form-check-input:checked{
@@ -612,81 +99,11 @@ a {
     border-color: #111111;
 }
 .form-check-input:focus{
-    border-color: #d0c24f;
+    border-color: var(--yellow);
     box-shadow: 0 0 0 0.2rem rgba(208,194,79,0.35);
 }
 
-#archiveindex, #request{
+#archiveindex,
+#request{
     scroll-margin-top: 90px;
-}
-
-/* под маленький экран */
-@media (max-width: 1000px){
-    .header{
-        padding: 10px 35px;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-    .headernav{
-        gap: 28px;
-        flex-wrap: wrap;
-    }
-
-    /* Task 1 — промежуточный (tablet) размер шрифта между desktop и mobile */
-    .researchmaintext h1, .personneltext h1{
-        font-size: 3.5rem;
-    }
-    .researchtitle h2, .resourcetitle h2, .gallerytitle h2,
-    .archivegridhead h2, .staffgridhead h2{
-        font-size: 3rem;
-    }
-
-    .fieldcarousel .carousel-item img{
-        height: 360px;
-    }
-}
-
-@media (max-width: 650px){
-    body{
-        padding-top: 120px;
-    }
-    body.bs-page{
-        padding-top: 0;
-    }
-    .header{
-        position: absolute;
-        padding: 10px 20px;
-    }
-    .headernav{
-        gap: 12px;
-        font-size: 0.85rem;
-    }
-    .researchmaintext, .personneltext{
-        width: 80vw;
-    }
-    /* Task 1 — самый маленький (mobile) размер шрифта */
-    .researchmaintext h1, .personneltext h1{
-        font-size: 3rem;
-    }
-    .researchtitle h2, .resourcetitle h2, .gallerytitle h2,
-    .archivegridhead h2, .staffgridhead h2{
-        font-size: 2.7rem;
-    }
-    .notice{
-        grid-template-columns: 1fr;
-        gap: 8px;
-    }
-    .fieldcarousel .carousel-item img{
-        height: 260px;
-    }
-    .fieldcarousel .carousel-caption{
-        left: 4%;
-        right: 4%;
-        bottom: 15px;
-        padding: 6px 10px;
-    }
-    .fieldcarousel .carousel-caption h5{
-        font-size: 0.95rem;
-        margin-bottom: 0;
-    }
 }

@@ -4,48 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Research & Archive</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/danik.css">
 </head>
-<body class="bs-page">
+<body>
 
-    <nav class="navbar navbar-expand-lg asyncnavbar sticky-top">
-        <div class="container-fluid px-3 px-lg-5">
-            <a class="navbar-brand" href="index.html">
-                <img src="assets/asyncbiglogo.png" alt="A-Sync logo">
+    <header class="header">
+        <nav class="navbar navbar-expand-lg px-3 px-lg-5 py-2">
+            <a class="navbar-brand headerlogo m-0" href="index.html">
+                <img src="assets/asyncbiglogo.png" alt="A-Sync Logo">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
-                aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainnav" aria-controls="mainnav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="mainNavbar">
-                <ul class="navbar-nav mx-lg-auto gap-lg-4 py-2 py-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
-                    <li class="nav-item"><a class="nav-link" href="tech.html">TECHNOLOGY</a></li>
-                    <li class="nav-item"><a class="nav-link" href="complex.html">THE COMPLEX</a></li>
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="research.html">RESEARCH &amp; ARCHIVE</a></li>
-                    <li class="nav-item"><a class="nav-link" href="personnel.html">FOR PERSONNEL</a></li>
-                </ul>
-                <a href="place_order.html" class="btn asyncnavbar-btn ms-lg-3">PLACE ORDER</a>
+            <div class="collapse navbar-collapse" id="mainnav">
+                <div class="navbar-nav headernav mx-lg-auto gap-lg-4 gap-xl-5">
+                    <a class="nav-link" href="index.html">HOME</a>
+                    <a class="nav-link" href="tech.html">TECHNOLOGY</a>
+                    <a class="nav-link" href="complex.html">THE COMPLEX</a>
+                    <a class="nav-link active" href="research.html">ARCHIVE</a>
+                    <a class="nav-link" href="personnel.html">FOR PERSONNEL</a>
+                    <a class="nav-link" href="media.html">MEDIA</a>
+                </div>
+                <div class="headeraction my-2 my-lg-0">
+                    <a href="place_order.html" class="btn btn-outline-dark rounded-pill px-3">PLACE ORDER</a>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <section class="researchmain">
-        <div class="researchlogo">
-            <img src="assets/asyncbiglogo.png" alt="A-Sync logo">
+    <section class="main">
+        <div class="mainlogo">
+            <img src="assets/asyncbiglogo.png" alt="">
         </div>
-        <div class="researchmaintext">
-            <p>PROJECT KV31</p>
-            <h1>Research & Archive</h1>
-            <p>Field recordings, research footage and archived documentation collected by A-Sync.</p>
+        <div class="maincontainer px-4 px-md-5 py-5">
+            <div class="maintext">
+                <span class="techbadge mb-3">PROJECT KV31</span>
+                <h1 class="mb-3">Research &amp; Archive</h1>
+                <p>Field recordings, research footage and archived documentation collected by A-Sync.</p>
+            </div>
         </div>
     </section>
 
     <section class="white">
-        <section class="container">
-            <section class="researchrecords py-4 py-md-5 px-3 px-sm-2 px-lg-5">
-                <div class="researchtitle mb-4 mb-lg-5">
+        <section class="allcontent container">
+
+            <section class="researchrecords py-5 px-sm-2">
+                <div class="sectionheadertitle mb-4 mb-lg-5">
+                    <p class="mb-2">Field Recordings / 01</p>
                     <h2>Selected field recordings.</h2>
                 </div>
                 <div class="row g-4">
@@ -56,7 +63,7 @@
                                 <p class="recordnum mb-3">RECORD / 01</p>
                                 <h3 class="card-title h4">Everything Must Go</h3>
                                 <p class="card-text">Archived field footage connected to ongoing A-Sync survey work.</p>
-                                <a href="https://youtu.be/ewZx0bnBb30" target="_blank" class="btn btn-outline-dark btn-sm rounded-pill mt-auto align-self-start">VIEW RECORDING</a>
+                                <a href="https://youtu.be/ewZx0bnBb30" target="_blank" class="btn btn-outline-dark btn-sm mt-auto align-self-start">VIEW RECORDING</a>
                             </div>
                         </div>
                     </div>
@@ -68,7 +75,7 @@
                                 <p class="recordnum mb-3">RECORD / 02</p>
                                 <h3 class="card-title h4">Static Dead End</h3>
                                 <p class="card-text">Field survey footage documenting an unusual section inside the Complex.</p>
-                                <a href="https://youtu.be/ZbPaWvqAEq4" target="_blank" class="btn btn-outline-dark btn-sm rounded-pill mt-auto align-self-start">VIEW RECORDING</a>
+                                <a href="https://youtu.be/ZbPaWvqAEq4" target="_blank" class="btn btn-outline-dark btn-sm mt-auto align-self-start">VIEW RECORDING</a>
                             </div>
                         </div>
                     </div>
@@ -80,14 +87,16 @@
                                 <p class="recordnum mb-3">RECORD / 03</p>
                                 <h3 class="card-title h4">Lighting and Tile Survey</h3>
                                 <p class="card-text">Technical survey of lighting conditions and materials found in the Complex.</p>
-                                <a href="https://youtu.be/DSWUEmJDglw" target="_blank" class="btn btn-outline-dark btn-sm rounded-pill mt-auto align-self-start">VIEW RECORDING</a>
+                                <a href="https://youtu.be/DSWUEmJDglw" target="_blank" class="btn btn-outline-dark btn-sm mt-auto align-self-start">VIEW RECORDING</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <section class="archivegrid py-4 py-md-5 px-3 px-sm-4 px-lg-5 mt-lg-4" id="archiveindex">
-                <div class="archivegridhead pb-3 mb-4">
+
+            <section class="archivegrid py-5 px-sm-2" id="archiveindex">
+                <div class="sectionheadertitle mb-4 mb-lg-5">
+                    <p class="mb-2">Project KV31 / 02</p>
                     <h2>Archive Index</h2>
                 </div>
 
@@ -152,12 +161,13 @@
                 <div class="archivegridfoot pt-3 mt-4">Archive division / last review 1990</div>
             </section>
 
-            <section class="gallerysection py-4 py-md-5 px-3 px-sm-2 px-lg-5">
-                <div class="gallerytitle mb-4 mb-lg-5">
+            <section class="gallerysection py-5 px-sm-2">
+                <div class="sectionheadertitle mb-4 mb-lg-5">
+                    <p class="mb-2">Field Gallery / 03</p>
                     <h2>Field image gallery.</h2>
                 </div>
 
-                <div id="fieldCarousel" class="carousel slide carousel-fade fieldcarousel mx-auto" data-bs-ride="carousel">
+                <div id="fieldCarousel" class="carousel slide carousel-fade mx-auto" data-bs-ride="carousel">
                     <div class="carousel-indicators">
                         <button type="button" data-bs-target="#fieldCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                         <button type="button" data-bs-target="#fieldCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -239,14 +249,20 @@
         </section>
     </section>
 
-    <footer class="footer">
-        <div class="footerleft">
+    <footer class="footer d-flex flex-column flex-md-row justify-content-around align-items-center gap-3 p-4 text-center">
+        <div class="footerleft text-md-start">
             <p>Kamash Abilmansur</p>
             <p>Daniyar Ukin</p>
-            <p>Islam</p>
+            <p>Islam Nurmukhammet</p>
+        </div>
+        <div class="footercontact text-md-start">
+            <p>info@async-foundation.org</p>
+            <p>+7 (000) 000-00-00</p>
+            <p>A-Sync Research Facility, Sector 7</p>
         </div>
         <p>&copy; 2017 A-SYNC by Kane Pixels. All rights reserved.</p>
     </footer>
-    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

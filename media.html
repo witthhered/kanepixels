@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Queries</title>
+    <link rel="stylesheet" href="css/media-queries.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="headerbar">
+            <a class="headerlogo" href="index.html">
+                <img src="assets/asyncbiglogo.png" alt="A-Sync Logo">
+            </a>
+            <input type="checkbox" id="navtoggle" class="navtoggle" aria-label="Toggle navigation">
+            <label for="navtoggle" class="navicon" aria-hidden="true">&#9776;</label>
+            <nav class="headernav" aria-label="Main navigation">
+                <a href="index.html">HOME</a>
+                <a href="tech.html">TECHNOLOGY</a>
+                <a href="complex.html">THE COMPLEX</a>
+                <a href="research.html">ARCHIVE</a>
+                <a href="personnel.html">FOR PERSONNEL</a>
+                <a href="mediamans.html" class="active" aria-current="page">MEDIA</a>
+            </nav>
+            <div class="headeraction">
+                <a href="place_order.html" class="btnbuy">PLACE ORDER</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="main hero-short">
+        <div class="mainlogo">
+            <img src="assets/asyncbiglogo.png" alt="">
+        </div>
+        <div class="maincontainer">
+            <div class="maintext">
+                <h1>Media queries in action</h1>
+                <p>One page, two tasks: text that changes size and cards that change layout, using only CSS media queries.</p>
+            </div>
+        </div>
+    </section>
+
+    <main class="white">
+        <div class="allcontent">
+
+            <section class="section">
+                <h2>Responsive typography</h2>
+                <p>Resize the browser window to see the text change. Font sizes switch at 768px and 1200px.</p>
+                <p>Current layout: <span class="breakpoint"></span></p>
+
+                <div class="sample">
+                    <h3>Heading level 3</h3>
+                    <p>On mobile this text is small, on a tablet it is medium, and on a desktop it is larger. Line length stays comfortable at every size.</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Card group</h2>
+                <p>Desktop shows three cards in a row, tablet shows two, and mobile stacks them in one column. The cards show the next sub-levels of Project KV31.</p>
+
+                <div class="cards">
+                    <article class="card">
+                        <img src="assets/poolroom.png" alt="Pool Room level">
+                        <div class="card-body">
+                            <h3>Sub-Level 37: Hydro-Spatial Architecture</h3>
+                            <p>Vast, interconnected aquatic structures with ambient light, non-Euclidean tiling, and static atmospheric pressure.</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="assets/fields.png" alt="The Fields level">
+                        <div class="card-body">
+                            <h3>Sub-Level 10: Biomorphic Cultivation</h3>
+                            <p>Boundless agricultural expanses under artificial daylight cycles, open for soil analysis and atmospheric sampling.</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="assets/94.png" alt="Neighborhood Void level">
+                        <div class="card-body">
+                            <h3>Sub-Level 94: Subterranean Residential</h3>
+                            <p>Artificial suburban layouts suspended in low light, with non-linear roadways waiting to be mapped.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>The code behind it</h2>
+                <p>Both tasks use the same two breakpoints, written mobile first. The default styles are for phones, and each <code>min-width</code> query adds rules for larger screens.</p>
+
+                <h3>Task 1: font sizes</h3>
+                <pre class="code">:root { --fs-h3: 1.5rem; }
+
+@media (min-width: 768px) {
+    :root { --fs-h3: 1.9rem; }
+}
+
+@media (min-width: 1200px) {
+    :root { --fs-h3: 2.5rem; }
+}
+
+.section h2 { font-size: var(--fs-h3); }</pre>
+
+                <h3>Task 2: cards per row</h3>
+                <pre class="code">.cards { grid-template-columns: 1fr; }
+
+@media (min-width: 768px) {
+    .cards { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1200px) {
+    .cards { grid-template-columns: repeat(3, 1fr); }
+}</pre>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footerleft">
+            <p>Kamash Abilmansur</p>
+            <p>Daniyar Ukin</p>
+            <p>Islam Nurmukhammet</p>
+        </div>
+        <div class="footercontact">
+            <p>info@async-foundation.org</p>
+            <p>+7 (000) 000-00-00</p>
+            <p>A-Sync Research Facility, Sector 7</p>
+        </div>
+        <p>&copy; 2017 A-SYNC by Kane Pixels. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
