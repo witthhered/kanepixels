@@ -26,6 +26,7 @@
                     <a class="nav-link active" href="research.html">ARCHIVE</a>
                     <a class="nav-link" href="personnel.html">FOR PERSONNEL</a>
                     <a class="nav-link" href="media.html">MEDIA</a>
+                    <a class="nav-link" href="faq.html">FAQ</a>
                 </div>
                 <div class="headeraction my-2 my-lg-0">
                     <a href="place_order.html" class="btn btn-outline-dark rounded-pill px-3">PLACE ORDER</a>
@@ -47,8 +48,13 @@
         </div>
     </section>
 
-    <section class="white">
+    <section class="white" id="pageBackground">
         <section class="allcontent container">
+
+            <div class="archivetoolbar d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-3 pt-4 px-sm-2">
+                <p class="mb-0">Session time: <span class="datetime" id="dateTime"></span></p>
+                <button type="button" class="btn btn-outline-dark btn-sm" id="colorButton">CHANGE BACKGROUND</button>
+            </div>
 
             <section class="researchrecords py-5 px-sm-2">
                 <div class="sectionheadertitle mb-4 mb-lg-5">
@@ -246,6 +252,38 @@
                 </div>
             </section>
 
+            <section class="faqsection py-5 px-sm-2">
+                <div class="sectionheadertitle mb-4 mb-lg-5">
+                    <p class="mb-2">Archive FAQ / 04</p>
+                    <h2>Frequently asked questions</h2>
+                </div>
+
+                <div class="faq-item">
+                    <button type="button" class="faq-question">Who can access the KV31 archive?</button>
+                    <div class="faq-answer">
+                        <p>Archive records are available to research staff with internal access. Extended records require approval from the personnel desk.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button type="button" class="faq-question">How do I request additional recordings?</button>
+                    <div class="faq-answer">
+                        <p>Use the request form on the For Personnel page. Choose the Research department and describe which records you need.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button type="button" class="faq-question">Can archive materials be shared outside A-Sync?</button>
+                    <div class="faq-answer">
+                        <p>No. All recordings and documents are for internal use only and must not be copied or shared.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button type="button" class="faq-question">How often is the archive updated?</button>
+                    <div class="faq-answer">
+                        <p>New field recordings are added after every survey cycle, once they pass technical review.</p>
+                    </div>
+                </div>
+            </section>
+
         </section>
     </section>
 
@@ -264,5 +302,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/research.js"></script>
 </body>
 </html>

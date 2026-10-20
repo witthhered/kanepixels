@@ -1,0 +1,68 @@
+.clockbox {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 18px 28px;
+    background: var(--yellow);
+    border: var(--line);
+    border-radius: 8px;
+}
+.clockbox .clockdate {
+    font-size: 1.1rem;
+    font-weight: 500;
+    opacity: 0.8;
+}
+.clockbox .clocktime {
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    font-variant-numeric: tabular-nums;
+}
+
+.faqlist {
+    padding: 40px 0 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 56rem;
+}
+.faqitem {
+    background: #f8f8f8;
+    border: 1px solid #e0dccc;
+    border-left: 3px solid var(--yellow);
+    border-radius: 6px;
+    overflow: hidden;
+}
+.faqq {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 20px;
+    background: none;
+    border: 0;
+    text-align: left;
+    cursor: pointer;
+    font-size: var(--fs-h4);
+    font-weight: 700;
+    line-height: 1.3;
+}
+.faqq:hover { background: #efebdc; }
+.faqicon {
+    flex: none;
+    font-size: 1.6rem;
+    line-height: 1;
+    transition: transform 0.3s ease;
+}
+.faqitem.open .faqicon { transform: rotate(45deg); }
+.faqa {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+}
+.faqa p {
+    padding: 0 20px 20px;
+    color: #444;
+    line-height: 1.6;
+    font-size: 1rem;
+}

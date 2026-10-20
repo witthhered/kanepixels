@@ -1,0 +1,432 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --fs-hero: 2.25rem;
+    --fs-h1: 2rem;
+    --fs-h2: 1.75rem;
+    --fs-h3: 1.5rem;
+    --fs-h4: 1.1rem;
+    --fs-p: 1rem;
+    --yellow: #d0c24f;
+    --cream: #f3f0e6;
+    --line: 1px solid #111111;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "IBM Plex Sans Condensed", sans-serif;
+}
+
+body {
+    color: #000;
+    padding-top: 60px;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:focus-visible {
+    outline: 3px solid #000;
+    outline-offset: 2px;
+}
+
+img {
+    max-width: 100%;
+}
+
+.header {
+    background-color: var(--yellow);
+    border-bottom: var(--line);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.headerbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 16px;
+}
+
+.headerlogo img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+.navtoggle {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+}
+
+.navicon {
+    font-size: 1.8rem;
+    line-height: 1;
+    padding: 2px 10px;
+    border: 1px solid #000;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.navtoggle:focus-visible + .navicon {
+    outline: 3px solid #000;
+    outline-offset: 2px;
+}
+
+.headernav,
+.headeraction {
+    display: none;
+    width: 100%;
+}
+
+.headernav {
+    flex-direction: column;
+}
+
+.navtoggle:checked ~ .headernav {
+    display: flex;
+}
+
+.navtoggle:checked ~ .headeraction {
+    display: block;
+    padding: 8px 0;
+}
+
+.headernav a {
+    font-size: 1.2rem;
+    font-weight: 500;
+    opacity: 0.8;
+    padding: 8px 0;
+}
+
+.headernav a:hover,
+.headernav a:focus {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.headernav a.active {
+    opacity: 1;
+    font-weight: 700;
+}
+
+.btnbuy {
+    display: inline-block;
+    border: 1px solid #212529;
+    border-radius: 50rem;
+    padding: 6px 16px;
+    font-weight: 500;
+}
+
+.btnbuy:hover {
+    background-color: #212529;
+    color: var(--yellow);
+}
+
+.main {
+    background-color: var(--yellow);
+    min-height: calc(100vh - 60px);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    border-bottom: var(--line);
+}
+
+.hero-short {
+    min-height: 40vh;
+}
+
+.mainlogo img {
+    position: absolute;
+    top: 50%;
+    right: -10%;
+    transform: translateY(-50%);
+    width: 120vw;
+    max-width: none;
+    opacity: 0.25;
+}
+
+.maincontainer {
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    padding: 3rem 1.5rem;
+}
+
+.maintext {
+    max-width: 44rem;
+}
+
+.maintext h1 {
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-size: var(--fs-hero);
+    line-height: 1.1;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.maintext p {
+    font-size: var(--fs-p);
+    font-weight: 600;
+    opacity: 0.8;
+}
+
+.white {
+    background-color: var(--cream);
+    border-bottom: var(--line);
+}
+
+.allcontent {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.section {
+    padding: 3rem 0;
+    border-bottom: var(--line);
+}
+
+.section:last-child {
+    border-bottom: 0;
+}
+
+.section h2 {
+    font-size: var(--fs-h3);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.section h3 {
+    font-size: var(--fs-h4);
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 1.5rem 0 0.75rem 0;
+}
+
+.section p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #333;
+    max-width: 50rem;
+    margin-bottom: 1rem;
+}
+
+.sample {
+    background-color: #f8f8f8;
+    border: 1px solid #e0dccc;
+    border-radius: 6px;
+    padding: 1.5rem;
+}
+
+.section .sample h3 {
+    font-size: var(--fs-h2);
+    font-weight: 300;
+    margin-top: 0;
+}
+
+.section .sample p {
+    font-size: var(--fs-p);
+}
+
+.section .sample p:last-child {
+    margin-bottom: 0;
+}
+
+.breakpoint {
+    display: inline-block;
+    background-color: #111111;
+    color: var(--cream);
+    border-radius: 50rem;
+    padding: 0.1rem 0.9rem;
+    font-size: 1rem;
+}
+
+.breakpoint::after {
+    content: "Mobile (under 768px)";
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.card {
+    background-color: #f8f8f8;
+    border: 1px solid #e0dccc;
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.card img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    display: block;
+}
+
+.card-body {
+    padding: 1.25rem;
+}
+
+.section .card-body h3 {
+    font-size: var(--fs-h4);
+    margin: 0 0 0.75rem 0;
+}
+
+.section .card-body p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #444;
+    margin: 0;
+}
+
+.code {
+    background-color: #111111;
+    color: var(--cream);
+    padding: 1rem;
+    overflow-x: auto;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.section code {
+    background-color: #e7e2d2;
+    color: #111111;
+    padding: 0.1rem 0.35rem;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 0.9em;
+}
+
+.footer {
+    background-color: var(--yellow);
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: 500;
+    position: sticky;
+    z-index: -5;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.footer p {
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    :root {
+        --fs-hero: 3.25rem;
+        --fs-h1: 3rem;
+        --fs-h2: 2.25rem;
+        --fs-h3: 1.9rem;
+        --fs-h4: 1.2rem;
+        --fs-p: 1.1rem;
+    }
+
+    .mainlogo img {
+        width: 65vw;
+        opacity: 0.5;
+    }
+
+    .maincontainer {
+        padding: 3rem;
+    }
+
+    .allcontent {
+        width: 85%;
+    }
+
+    .breakpoint::after {
+        content: "Tablet (768px to 1199px)";
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .code {
+        font-size: 1rem;
+    }
+
+    .footer {
+        flex-direction: row;
+    }
+
+    .footerleft,
+    .footercontact {
+        text-align: left;
+    }
+}
+
+@media (min-width: 1200px) {
+    :root {
+        --fs-hero: 4.5rem;
+        --fs-h1: 4rem;
+        --fs-h2: 3rem;
+        --fs-h3: 2.5rem;
+        --fs-h4: 1.3rem;
+        --fs-p: 1.5rem;
+    }
+
+    .headerbar {
+        padding: 8px 48px;
+    }
+
+    .navicon {
+        display: none;
+    }
+
+    .headernav {
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        gap: 48px;
+        margin: 0 auto;
+    }
+
+    .headernav a {
+        padding: 8px;
+    }
+
+    .headeraction {
+        display: block;
+        width: auto;
+    }
+
+    .allcontent {
+        width: 80%;
+    }
+
+    .breakpoint::after {
+        content: "Desktop (1200px and up)";
+    }
+
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
