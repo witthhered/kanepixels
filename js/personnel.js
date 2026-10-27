@@ -8,10 +8,10 @@ form.addEventListener("submit", function (event) {
     var password = document.getElementById("password").value;
     var confirmPassword = document.getElementById("confirmPassword").value;
 
-    document.getElementById("nameError").textContent = "";
-    document.getElementById("emailError").textContent = "";
-    document.getElementById("passwordError").textContent = "";
-    document.getElementById("confirmPasswordError").textContent = "";
+    var errorTexts = document.querySelectorAll(".error-text");
+    errorTexts.forEach(function (errorText) {
+        errorText.textContent = "";
+    });
     document.getElementById("formSuccess").textContent = "";
 
     var ok = true;
@@ -52,4 +52,32 @@ openButton.addEventListener("click", function () {
 
 closeButton.addEventListener("click", function () {
     popup.style.display = "none";
+});
+
+
+var contactForm = document.getElementById("contactForm");
+var contactSuccess = document.getElementById("contactSuccess");
+
+contactForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    fetch("https://jsonplaceholder.typicode.com/posts", {
+        method: "POST",
+        body: new FormData(contactForm)
+    }).then(function () {
+        contactSuccess.textContent = "Message sent! The personnel desk will contact you soon.";
+        contactForm.reset();
+    });
+});
+
+
+var checkInButton = document.getElementById("checkInButton");
+var checkInText = document.getElementById("checkInText");
+var checkInSound = new Audio("assets/checkin.mp3");
+
+checkInButton.addEventListener("click", function () {
+    checkInText.textContent = "Checked in at " + new Date().toLocaleTimeString();
+    checkInText.classList.add("show");
+    checkInSound.currentTime = 0;
+    checkInSound.play();
 });
