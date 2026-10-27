@@ -27,7 +27,8 @@
                     <a class="nav-link" href="media.html">MEDIA</a>
                     <a class="nav-link" href="faq.html">FAQ</a>
                 </div>
-                <div class="headeraction my-2 my-xl-0">
+                <div class="headeraction d-flex align-items-center my-2 my-xl-0">
+                    <button type="button" class="btn btn-outline-dark btn-sm rounded-pill px-3 me-2" id="themeToggle">NIGHT MODE</button>
                     <a href="place_order.html" class="btn btn-dark rounded-pill px-3" aria-current="page">PLACE ORDER</a>
                 </div>
             </div>
@@ -58,6 +59,14 @@
 
                     <form id="orderForm" class="order-form card p-3 p-md-4 shadow-lg" action="#" method="POST" novalidate>
 
+                        <div class="step-indicator mb-4">
+                            <p class="step-label fw-semibold mb-2" id="stepLabel" aria-live="polite">Step 1 of 3: Facility</p>
+                            <div class="step-bar">
+                                <div class="step-bar-fill" id="stepFill"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-step active" data-step="1">
                         <fieldset class="mb-4">
                             <legend class="h4">Select Facility Type</legend>
                             <div class="row row-cols-1 row-cols-md-3 g-3">
@@ -95,7 +104,11 @@
                             <div class="error-msg" id="facilityError"></div>
                         </fieldset>
 
-                        <div class="row g-3">
+                            <div class="facility-info" id="facilityInfo" aria-live="polite"></div>
+                        </div>
+
+                        <div class="form-step" data-step="2">
+                            <div class="row g-3">
                             <div class="col-12 col-md-6">
                                 <label for="fullName" class="form-label fw-semibold">Full Name / Organization *</label>
                                 <input type="text" class="form-control" id="fullName" name="fullName" placeholder="e.g. John Doe / Apex Corp" autocomplete="name" required>
@@ -112,15 +125,6 @@
                                 <div class="error-msg" id="phoneError"></div>
                             </div>
                             <div class="col-12 col-md-6">
-                                <label for="sqmeters" class="form-label fw-semibold">Required Area</label>
-                                <div class="input-group">
-                                    <input type="number" class="form-control" id="sqmeters" name="sqmeters" placeholder="e.g. 50000" min="1000" aria-describedby="areaUnit areaHelp">
-                                    <span class="input-group-text" id="areaUnit">m&sup2;</span>
-                                </div>
-                                <div id="areaHelp" class="form-text">Minimum area is 1000 m&sup2;.</div>
-                                <div class="error-msg" id="sqmetersError"></div>
-                            </div>
-                            <div class="col-12 col-md-6">
                                 <label for="password" class="form-label fw-semibold">Access Password *</label>
                                 <input type="password" class="form-control" id="password" name="password" placeholder="At least 8 characters" autocomplete="new-password">
                                 <div class="error-msg" id="passwordError"></div>
@@ -129,6 +133,20 @@
                                 <label for="confirmPassword" class="form-label fw-semibold">Confirm Password *</label>
                                 <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Repeat password" autocomplete="new-password">
                                 <div class="error-msg" id="confirmPasswordError"></div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div class="form-step" data-step="3">
+                            <div class="row g-3">
+                            <div class="col-12 col-md-6">
+                                <label for="sqmeters" class="form-label fw-semibold">Required Area</label>
+                                <div class="input-group">
+                                    <input type="number" class="form-control" id="sqmeters" name="sqmeters" placeholder="e.g. 50000" min="1000" aria-describedby="areaUnit areaHelp">
+                                    <span class="input-group-text" id="areaUnit">m&sup2;</span>
+                                </div>
+                                <div id="areaHelp" class="form-text">Minimum area is 1000 m&sup2;.</div>
+                                <div class="error-msg" id="sqmetersError"></div>
                             </div>
                             <div class="col-12 col-md-6">
                                 <label for="timeline" class="form-label fw-semibold">Target Deployment Timeline</label>
@@ -179,6 +197,9 @@
                                 </div>
                                 <div class="error-msg" id="termsError"></div>
                             </div>
+                            </div>
+
+                            <div class="order-summary" id="orderSummary" aria-live="polite"></div>
                         </div>
 
                         <div class="alert alert-success d-none mt-3 mb-0" id="formSuccess" role="alert">
@@ -190,7 +211,11 @@
                                 <button type="reset" class="btn btn-outline-dark btn-sm">Clear form</button>
                                 <button type="button" class="btn btn-secondary btn-sm">Save draft</button>
                             </div>
-                            <button type="submit" class="btn btn-primary btn-lg px-5">Submit request</button>
+                            <div class="d-grid gap-2 d-md-flex">
+                                <button type="button" class="btn btn-outline-dark btn-lg px-4 d-none" id="backBtn">Back</button>
+                                <button type="button" class="btn btn-primary btn-lg px-5" id="nextBtn">Next</button>
+                                <button type="submit" class="btn btn-primary btn-lg px-5 d-none" id="submitBtn">Submit request</button>
+                            </div>
                         </div>
                     </form>
 
@@ -214,6 +239,8 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/common.js"></script>
     <script src="js/validation.js"></script>
+    <script src="js/order.js"></script>
 </body>
 </html>
