@@ -66,6 +66,11 @@
                             By compressing localized electromagnetic flux beyond critical threshold limits, the unit induces micro-fractures in standard spatial geometry,
                             allowing safe passage into previously unreachable non-Euclidean environments.
                         </p>
+                        <p class="techdesc moretext" id="moretext">
+                            Each aperture cycle is monitored in real time by sector nodes. Field strength, drift and thermal load are logged
+                            and compared against baseline values before the next cycle is authorized.
+                        </p>
+                        <button type="button" class="btn btn-outline-dark mt-3" id="morebtn">Read more</button>
                     </div>
                     <div class="col-lg-6">
                         <div class="techcoreimg">
@@ -98,6 +103,22 @@
                         <p>Powered by isolated sub-level generators capable of delivering continuous 1.2 GW loads during rapid aperture expansion sequences.</p>
                     </div>
                 </div>
+            </section>
+
+            <section class="techstatussection py-5 px-sm-2" id="status">
+                <div class="sectionheadertitle mb-4">
+                    <p class="mb-2">Telemetry / 04</p>
+                    <h2>Sector Status</h2>
+                </div>
+                <div class="btn-group mb-4" role="group" id="statusfilters" aria-label="Status filters">
+                    <button type="button" class="btn btn-secondary" data-filter="all">All</button>
+                    <button type="button" class="btn btn-secondary" data-filter="online">Online</button>
+                    <button type="button" class="btn btn-secondary" data-filter="offline">Offline</button>
+                </div>
+                <p class="mb-3" id="statuscount"></p>
+                <div class="row g-3" id="statuslist"></div>
+                <button type="button" class="btn btn-primary mt-4" id="timebtn">Show facility time</button>
+                <p class="mt-3" id="timeout"></p>
             </section>
 
             <!-- Two columns: col-lg-4 + col-lg-8 -->
@@ -152,6 +173,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
     <script src="js/tech.js"></script>
 </body>
 </html>
