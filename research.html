@@ -110,10 +110,8 @@
                     <div class="col-12 col-lg-6">
                         <aside class="archiveside h-100 pe-lg-4">
                             <h3>Archive notes</h3>
-                            <p>Project: KV31</p>
-                            <p>Department: Research</p>
-                            <p>Access: Internal</p>
-                            <p>Records shown: 3</p>
+                            <div id="archiveNotes"></div>
+                            <ul class="recordlist" id="recordList"></ul>
                         </aside>
                     </div>
 
@@ -121,9 +119,11 @@
                         <div class="archive-access h-100 ps-lg-4">
                             <h3>Requesting access</h3>
                             <p>Additional archive records are available to cleared personnel on request. Contact the personnel desk for extended access to KV31 field data.</p>
+                            <p id="moreText">Requests are reviewed by the archive division within three working days. Approved staff receive access to the full survey recordings, technical notes and photographs from every KV31 expedition.</p>
                             <div class="btn-group" role="group" aria-label="Archive quick actions">
                                 <a href="personnel.html#request" class="btn btn-outline-dark btn-sm">REQUEST ACCESS</a>
-                                <button type="button" class="btn btn-outline-dark btn-sm" onclick="window.print()">PRINT INDEX</button>
+                                <button type="button" class="btn btn-outline-dark btn-sm" id="readMoreButton">READ MORE</button>
+                                <button type="button" class="btn btn-outline-dark btn-sm" id="printButton">PRINT INDEX</button>
                             </div>
                         </div>
                     </div>
