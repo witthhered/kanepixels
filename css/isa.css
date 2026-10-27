@@ -400,3 +400,229 @@ h2 {
         --fs-p: 1.5rem;
     }
 }
+
+/* ===== Assignment 5 ===== */
+
+/* click animation (class "pulse" is added by common.js) */
+.pulse {
+    animation: pulse 0.3s ease;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.94); }
+    100% { transform: scale(1); }
+}
+
+@keyframes fadeSlide {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* keyboard focus in the menu */
+.headernav .nav-link:focus-visible {
+    outline: 2px solid #111111;
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* "Show more" text (display is changed by complex.js) */
+.more-text {
+    display: none;
+    animation: fadeUp 0.4s ease;
+}
+
+/* multi-step form */
+.step-bar {
+    height: 8px;
+    background-color: #dddddd;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.step-bar-fill {
+    width: 33.33%;
+    height: 100%;
+    background-color: #111111;
+    transition: width 0.4s ease;
+}
+
+.form-step {
+    display: none;
+}
+
+.form-step.active {
+    display: block;
+    animation: fadeSlide 0.4s ease;
+}
+
+.facility-card {
+    transition: border-color 0.2s, background-color 0.2s, transform 0.2s;
+}
+
+.btn-check:checked + .facility-card {
+    transform: translateY(-4px);
+}
+
+.facility-info {
+    display: none;
+    margin-top: 1rem;
+    padding: 1rem 1.25rem;
+    background-color: #f4efc4;
+    border-left: 5px solid var(--yellow);
+    border-radius: 6px;
+    line-height: 1.6;
+}
+
+.facility-info.visible {
+    display: block;
+    animation: fadeUp 0.4s ease;
+}
+
+.order-summary {
+    margin-top: 1.5rem;
+    padding: 1rem 1.25rem;
+    background-color: #faf8e8;
+    border: 2px dashed #111111;
+    border-radius: 10px;
+}
+
+.order-summary h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.order-summary ul {
+    list-style: none;
+}
+
+.order-summary li {
+    line-height: 1.8;
+}
+
+/* Day / Night theme (class "night" is set on body by common.js) */
+body,
+.white,
+.bg-white,
+.bg-light,
+.order-form,
+.faq-item {
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+body.night {
+    background-color: #111111;
+    color: #f3f0e6;
+}
+
+body.night .white {
+    background-color: #1b1b1b;
+}
+
+body.night .bg-white {
+    background-color: #262626 !important;
+    color: #f3f0e6;
+}
+
+body.night .bg-light {
+    background-color: #333333 !important;
+}
+
+body.night .text-body {
+    color: #f3f0e6 !important;
+}
+
+body.night .textblock p,
+body.night .faq-answer p {
+    color: #dddddd;
+}
+
+body.night .faq-item {
+    background-color: #262626;
+    border-color: #d0c24f;
+}
+
+body.night .faq-question {
+    color: #f3f0e6;
+}
+
+body.night .faq-question:hover,
+body.night .faq-question:focus-visible {
+    background-color: #3a3716;
+}
+
+body.night .faq-item.open .faq-question {
+    background-color: var(--yellow);
+    color: #111111;
+}
+
+body.night .faq-answer p {
+    border-top-color: #555555;
+}
+
+body.night .bg-white .btn-outline-dark {
+    --bs-btn-color: #f3f0e6;
+    --bs-btn-border-color: #f3f0e6;
+    --bs-btn-hover-color: #111111;
+    --bs-btn-hover-bg: #f3f0e6;
+    --bs-btn-hover-border-color: #f3f0e6;
+}
+
+body.night .order-form {
+    background-color: #222222;
+    color: #f3f0e6;
+}
+
+body.night .order-form .form-control::placeholder {
+    color: #aaaaaa;
+}
+
+body.night .order-form .form-text {
+    color: #bbbbbb;
+}
+
+body.night .order-form .btn-outline-dark {
+    --bs-btn-color: #f3f0e6;
+    --bs-btn-border-color: #f3f0e6;
+    --bs-btn-hover-color: #111111;
+    --bs-btn-hover-bg: #f3f0e6;
+    --bs-btn-hover-border-color: #f3f0e6;
+}
+
+body.night .facility-card {
+    background-color: #2d2d2d;
+    color: #f3f0e6;
+}
+
+body.night .btn-check:checked + .facility-card {
+    background-color: #4a4620;
+    border-color: var(--yellow);
+    box-shadow: 0 0 0 2px var(--yellow);
+}
+
+body.night .facility-info {
+    background-color: #3a3716;
+}
+
+body.night .order-summary {
+    background-color: #2b2b2b;
+    border-color: var(--yellow);
+}
+
+body.night .step-bar {
+    background-color: #444444;
+}
+
+body.night .step-bar-fill {
+    background-color: var(--yellow);
+}
+
+body.night .error-msg {
+    color: #ff8a95;
+}
