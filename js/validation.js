@@ -99,6 +99,7 @@ form.addEventListener('submit', function (e) {
 
     form.reset();
     successBox.classList.remove('d-none');
+    playSound('success');
     successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
 });
 
