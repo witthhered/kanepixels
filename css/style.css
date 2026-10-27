@@ -512,3 +512,35 @@ a {
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
+.moretext {
+    display: none;
+    margin-top: 16px;
+}
+.techstatussection {
+    border-bottom: var(--line);
+}
+.statuscard {
+    background: #f8f8f8;
+    border: 1px solid #e0dccc;
+    border-left: 3px solid var(--yellow);
+    border-radius: 6px;
+    animation: cardin 0.5s ease;
+}
+.statuscard.offline {
+    border-left-color: #b5432a;
+}
+.statuscard h3 {
+    font-size: var(--fs-h4);
+    font-weight: 700;
+}
+@keyframes cardin {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
