@@ -26,13 +26,9 @@
     });
 })();
 
-(function () {
-    var list = document.getElementById('statuslist');
-    var count = document.getElementById('statuscount');
-    var filters = document.querySelectorAll('#statusfilters .btn');
-    var timeBtn = document.getElementById('timebtn');
-    var timeOut = document.getElementById('timeout');
-    if (!list) return;
+$(document).ready(function () {
+    var list = $('#statuslist');
+    if (!list.length) return;
 
     var sectors = [
         { name: 'Sector 7', status: 'online', drift: 0.6 },
@@ -41,46 +37,74 @@
         { name: 'Threshold 3', status: 'online', drift: 0.9 },
         { name: 'Sub-Level 2', status: 'offline', drift: 3.2 }
     ];
+    var type = 'all';
 
     var panel = {
         describe: function (sector) {
             return 'Dimensional drift: ' + sector.drift + '%';
         },
-        filter: function (type) {
-            switch (type) {
-                case 'online':
-                    return sectors.filter(function (s) { return s.status === 'online'; });
-                case 'offline':
-                    return sectors.filter(function (s) { return s.status === 'offline'; });
-                default:
-                    return sectors;
-            }
+        highlight: function (text, query) {
+            if (!query) return text;
+            var safe = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            return text.replace(new RegExp(safe, 'gi'), '<mark>$&</mark>');
         },
-        render: function (items) {
-            list.innerHTML = '';
-            for (var i = 0; i < items.length; i++) {
-                var col = document.createElement('div');
-                col.className = 'col-12 col-md-6 col-lg-4';
-                col.innerHTML =
-                    '<div class="statuscard p-3 ' + items[i].status + '">' +
-                    '<h3 class="mb-2">' + items[i].name + '</h3>' +
-                    '<p>' + this.describe(items[i]) + '</p>' +
-                    '<p>Status: ' + items[i].status + '</p></div>';
-                list.appendChild(col);
+        filter: function (query) {
+            return sectors.filter(function (s) {
+                var typeOk = type === 'all' || s.status === type;
+                var nameOk = s.name.toLowerCase().indexOf(query.toLowerCase()) !== -1;
+                return typeOk && nameOk;
+            });
+        },
+        render: function () {
+            var query = $('#statussearch').val().trim();
+            var items = this.filter(query);
+            list.empty();
+            if (!items.length) {
+                list.append('<p class="col-12">No sectors found</p>');
             }
-            count.textContent = 'Showing ' + items.length + ' of ' + sectors.length + ' sectors';
+            $.each(items, function (i, s) {
+                list.append(
+                    '<div class="col-12 col-md-6 col-lg-4">' +
+                    '<div class="statuscard p-3 ' + s.status + '">' +
+                    '<h3 class="mb-2">' + panel.highlight(s.name, query) + '</h3>' +
+                    '<p>' + panel.describe(s) + '</p>' +
+                    '<p>Status: ' + s.status + '</p></div></div>'
+                );
+            });
+            $('#statuscount').text('Showing ' + items.length + ' of ' + sectors.length + ' sectors');
         }
     };
 
-    filters.forEach(function (btn) {
-        btn.addEventListener('click', function () {
-            panel.render(panel.filter(btn.dataset.filter));
-        });
+    $('#statusfilters .btn').on('click', function () {
+        type = $(this).data('filter');
+        $(this).addClass('active').siblings().removeClass('active');
+        panel.render();
     });
 
-    timeBtn.addEventListener('click', function () {
-        timeOut.textContent = 'Facility time: ' + new Date().toLocaleTimeString();
+    $('#statussearch').on('input', function () {
+        panel.render();
     });
 
-    panel.render(panel.filter('all'));
-})();
+    $('#timebtn').on('click', function () {
+        $('#timeout').text('Facility time: ' + new Date().toLocaleTimeString());
+    });
+
+    panel.render();
+});
+
+$(document).ready(function () {
+    var codes = $('.safetyrow .code');
+
+    codes.each(function () {
+        var box = $(this);
+        box.data('code', box.text().trim());
+        box.append('<span class="copyicon"></span><span class="copytip">Copied to clipboard!</span>');
+    });
+
+    codes.on('click', function () {
+        var box = $(this);
+        navigator.clipboard.writeText(box.data('code'));
+        box.find('.copytip').stop(true, true).fadeIn(200).delay(1200).fadeOut(300);
+     
+    });
+});

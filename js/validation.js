@@ -97,10 +97,9 @@ form.addEventListener('submit', function (e) {
         return;
     }
 
-    form.reset();
-    successBox.classList.remove('d-none');
-    playSound('success');
-    successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    // all fields are valid: script.js (jQuery) shows the spinner,
+    // then resets the form and shows the success message and the toast
+    $(form).trigger('orderValid');
 });
 
 form.addEventListener('input', function (e) {
