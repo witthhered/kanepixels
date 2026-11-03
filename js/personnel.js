@@ -55,22 +55,6 @@ closeButton.addEventListener("click", function () {
 });
 
 
-var contactForm = document.getElementById("contactForm");
-var contactSuccess = document.getElementById("contactSuccess");
-
-contactForm.addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    fetch("https://jsonplaceholder.typicode.com/posts", {
-        method: "POST",
-        body: new FormData(contactForm)
-    }).then(function () {
-        contactSuccess.textContent = "Message sent! The personnel desk will contact you soon.";
-        contactForm.reset();
-    });
-});
-
-
 var checkInButton = document.getElementById("checkInButton");
 var checkInText = document.getElementById("checkInText");
 var checkInSound = new Audio("assets/checkin.mp3");
