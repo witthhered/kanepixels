@@ -1,0 +1,298 @@
+/* jquery.css - styles for the jQuery features (Assignment 6) */
+
+/* ---------- Task 4: scroll progress bar ---------- */
+#scrollProgress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 7px;
+    background-color: #111111;
+    z-index: 1100;
+}
+
+#scrollProgress .bar {
+    position: relative;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #d0c24f, #ff9f1c 55%, #e4572e);
+}
+
+/* moving stripes on top of the color */
+#scrollProgress .bar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.28) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.28) 50%, rgba(0, 0, 0, 0.28) 75%, transparent 75%);
+    background-size: 14px 14px;
+    animation: progress-stripes 0.8s linear infinite;
+}
+
+/* glowing dot at the end of the bar */
+#scrollProgress .bar::after {
+    content: "";
+    position: absolute;
+    right: -6px;
+    top: 50%;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px 3px #ff9f1c;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+#scrollProgress .bar.active::after {
+    opacity: 1;
+}
+
+@keyframes progress-stripes {
+    from { background-position: 0 0; }
+    to { background-position: 14px 0; }
+}
+
+/* ---------- Task 1, 2, 3: FAQ search ---------- */
+.search-box {
+    position: relative;
+}
+
+.suggestions {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    max-height: 260px;
+    overflow-y: auto;
+    background-color: #ffffff;
+    border: 1px solid #111111;
+    border-top: 0;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    list-style: none;
+}
+
+.suggestions li {
+    padding: 0.6rem 0.9rem;
+    cursor: pointer;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.suggestions li:last-child {
+    border-bottom: 0;
+}
+
+.suggestions li:hover,
+.suggestions li.active {
+    background-color: var(--yellow);
+    color: #000000;
+}
+
+.search-count {
+    min-height: 1.5rem;
+    margin: 0.5rem 0 0;
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+.no-results {
+    display: none;
+    margin-bottom: 1rem;
+    padding: 0.75rem 1rem;
+    border-left: 5px solid var(--yellow);
+    background-color: #f4efc4;
+    border-radius: 6px;
+}
+
+mark.hl {
+    background-color: #ffe66d;
+    color: #000000;
+    padding: 0 2px;
+    border-radius: 2px;
+}
+
+/* ---------- Task 5: number counter ---------- */
+.stat {
+    height: 100%;
+    padding: 1rem 0.5rem;
+    border-bottom: 4px solid var(--yellow);
+}
+
+.stat-number {
+    display: block;
+    font-size: clamp(2rem, 6vw, 3rem);
+    font-weight: 700;
+    line-height: 1.1;
+    font-variant-numeric: tabular-nums;
+}
+
+.stat-label {
+    display: block;
+    margin-top: 0.4rem;
+    font-size: 0.95rem;
+}
+
+/* ---------- Task 7: toast notifications ---------- */
+#toastBox {
+    position: fixed;
+    top: 80px;
+    right: 16px;
+    z-index: 1200;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: calc(100% - 32px);
+}
+
+.toast-note {
+    max-width: 340px;
+    padding: 0.75rem 1rem;
+    background-color: #111111;
+    color: #f3f0e6;
+    border-left: 5px solid var(--yellow);
+    border-radius: 6px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+/* ---------- Task 8: copy button ---------- */
+.copy-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    margin-left: 0.5rem;
+    padding: 0;
+    vertical-align: middle;
+    background: transparent;
+    color: inherit;
+    border: 1px solid currentColor;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.copy-btn:hover,
+.copy-btn:focus-visible {
+    background-color: #111111;
+    color: #f3f0e6;
+}
+
+.copy-btn.copied {
+    background-color: #2e7d32;
+    border-color: #2e7d32;
+    color: #ffffff;
+}
+
+.copy-tip {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 4px);
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.2rem 0.5rem;
+    background-color: #111111;
+    color: #f3f0e6;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 400;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.copy-snippet {
+    font-weight: 600;
+    border-bottom: 1px dashed currentColor;
+}
+
+/* code snippets: button in the corner of the block */
+.code-wrap {
+    position: relative;
+}
+
+.code-wrap .code {
+    padding-right: 3.5rem;
+}
+
+.copy-btn-code {
+    position: absolute;
+    top: 0.6rem;
+    right: 0.6rem;
+    margin: 0;
+    color: #f3f0e6;
+}
+
+.copy-btn-code:hover,
+.copy-btn-code:focus-visible {
+    background-color: var(--yellow);
+    color: #000000;
+}
+
+.copy-btn-code .copy-tip {
+    left: auto;
+    right: 0;
+    transform: none;
+}
+
+/* ---------- Task 9: lazy images ---------- */
+img.lazy {
+    background-color: #d9d9d9;
+    opacity: 0.4;
+    filter: blur(6px);
+    transition: opacity 0.6s ease, filter 0.6s ease;
+}
+
+img.lazy.loaded {
+    opacity: 1;
+    filter: none;
+}
+
+/* ---------- Night mode ---------- */
+body.night .suggestions {
+    background-color: #2b2b2b;
+    color: #f3f0e6;
+    border-color: var(--yellow);
+}
+
+body.night .suggestions li {
+    border-bottom-color: #444444;
+}
+
+body.night .suggestions li:hover,
+body.night .suggestions li.active {
+    color: #000000;
+}
+
+body.night .no-results {
+    background-color: #3a3716;
+}
+
+body.night #faqSearch {
+    background-color: #333333;
+    border-color: #777777;
+    color: #f3f0e6;
+}
+
+body.night img.lazy {
+    background-color: #444444;
+}
+
+/* ---------- Less motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+    #scrollProgress .bar::before {
+        animation: none;
+    }
+
+    img.lazy {
+        transition: none;
+    }
+}

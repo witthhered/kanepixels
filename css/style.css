@@ -400,6 +400,9 @@ a {
     padding: 5px 10px;
     border-radius: 4px;
     white-space: nowrap;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
 }
 .safetyrow h4 {
     font-size: 1.1rem;
@@ -543,4 +546,82 @@ a {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.scrollprogress {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    margin-top: 1px;
+    background: rgba(0, 0, 0, 0.15);
+}
+.scrollfill {
+    position: relative;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, #111111, #b5432a, var(--yellow), #4a8f5a);
+    background-size: 100vw 100%;
+    box-shadow: 0 0 10px rgba(181, 67, 42, 0.8);
+}
+.scrollfill::after {
+    content: "";
+    position: absolute;
+    right: -6px;
+    top: -3px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--yellow);
+    border: 2px solid #111111;
+}
+
+.counter {
+    font-variant-numeric: tabular-nums;
+}
+
+mark {
+    background: var(--yellow);
+    color: #000;
+    padding: 0 2px;
+    border-radius: 2px;
+}
+#statussearch {
+    max-width: 25rem;
+    padding-left: 16px;
+    border: var(--line);
+    border-radius: 20px;
+    background: #f8f8f8;
+}
+#statussearch:focus {
+    border-color: #111111;
+    box-shadow: 0 0 0 0.2rem rgba(208, 194, 79, 0.6);
+}
+
+.safetyrow .code:hover {
+    background: var(--yellow);
+}
+.copyicon {
+    margin-left: 6px;
+}
+.copytip {
+    position: absolute;
+    bottom: 130%;
+    left: 0;
+    display: none;
+    background: #111111;
+    color: var(--cream);
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.lazy {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+.lazy.loaded {
+    opacity: 1;
 }
