@@ -230,3 +230,27 @@
     opacity: 1;
     transform: translateY(0);
 }
+
+#progressBar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--yellow), #f08a24, #c0392b);
+    box-shadow: 0 0 8px rgba(240, 138, 36, 0.7);
+    z-index: 1000;
+}
+
+#toast{
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #111111;
+    color: #ffffff;
+    padding: 12px 20px;
+    border-left: 4px solid var(--yellow);
+    border-radius: 6px;
+    z-index: 1000;
+}
